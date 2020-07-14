@@ -1,10 +1,10 @@
 <template>
   <div>
     <section>
-        <div class="overlay-content">
-            <h1>Palette Lab</h1>
-        </div>
-      
+      <div class="overlay-content">
+        <h1 class="main-title">Palette Lab</h1>
+      </div>
+
       <svg
         class="scene"
         width="100%"
@@ -48,16 +48,18 @@
   </div>
 </template>
 <style lang="scss" scoped>
-.overlay-content{
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 3;
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat&family=Raleway&display=swap");
+.overlay-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 3;
 }
 .scene {
   background: #282886;
+  transition: 2s filter ease;
 }
 
 .scene path:first-child {
@@ -90,11 +92,18 @@
 
 .title {
   color: #fff;
-  font-size: 6vw;
-  font-weight: 400;
+
   z-index: 1000;
   font-family: "Arapey", serif;
   pointer-events: none;
+}
+.main-title {
+  font-family: "Kanit", sans-serif;
+  font-size: 6vw;
+  font-weight: 500;
+  width: 100%;
+  text-align: center;
+  color: #fff;
 }
 </style>
 
@@ -102,13 +111,13 @@
 export default {
   mounted() {
     this.animate();
-    document.querySelector("body").style.overflowY= "hidden";
-    document.querySelector("body").style.height= "100vh";
+    document.querySelector("body").style.overflowY = "hidden";
+    document.querySelector("body").style.height = "100vh";
+    this.colorAnimate();
   },
   destroyed() {
-    this.animate();
-    document.querySelector("body").style.overflowY= "auto";
-    document.querySelector("body").style.height= "100%";
+    document.querySelector("body").style.overflowY = "auto";
+    document.querySelector("body").style.height = "100%";
   },
   methods: {
     animate() {
@@ -127,6 +136,14 @@ export default {
           });
         }, anime.random(0, 1000));
       });
+    },
+    colorAnimate() {
+      var counter = 0;
+      setInterval(function () {
+        counter = counter + 10;
+        document.querySelector("svg.scene").style.filter =
+          "hue-rotate(" + counter + "deg)";
+      }, 6000);
     },
   },
 };
