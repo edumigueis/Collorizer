@@ -102,8 +102,13 @@
 export default {
   mounted() {
     this.animate();
-    document.querySelector("body").style.overflow= "hidden";
+    document.querySelector("body").style.overflowY= "hidden";
     document.querySelector("body").style.height= "100vh";
+  },
+  destroyed() {
+    this.animate();
+    document.querySelector("body").style.overflowY= "auto";
+    document.querySelector("body").style.height= "100%";
   },
   methods: {
     animate() {
