@@ -2,7 +2,12 @@
   <div>
     <section>
       <div class="overlay-content">
-        <h1 class="main-title">Palette Lab</h1>
+        <div class="text-content">
+          <h1 class="main-title">Collorizer</h1>
+          <p>Everything you need colorwise, palettes creator, color mixin and a looott of tools for you.</p>
+          <a>Start Now</a>
+        </div>
+        
       </div>
 
       <svg
@@ -48,7 +53,7 @@
   </div>
 </template>
 <style lang="scss" scoped>
-@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat&family=Raleway&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Martel:wght@300;400;600;700;800;900&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 .overlay-content {
   position: absolute;
   top: 0;
@@ -90,20 +95,26 @@
   fill: #262689;
 }
 
-.title {
-  color: #fff;
-
-  z-index: 1000;
-  font-family: "Arapey", serif;
-  pointer-events: none;
-}
 .main-title {
-  font-family: "Kanit", sans-serif;
-  font-size: 6vw;
-  font-weight: 500;
+  font-family: 'Martel', serif;
+  font-size: 7.53464363vw;
+    font-weight: 500;
   width: 100%;
-  text-align: center;
+  text-align: right;
   color: #fff;
+}
+.text-content{
+  position: absolute;
+  float: right;
+  margin-right: 50px;
+  bottom: 30vh;
+  right: 0;
+  color: #fff;
+  text-align: right;
+  width: 37vw;
+  p{
+    font-size: 1vw;
+  }
 }
 </style>
 
@@ -140,7 +151,11 @@ export default {
     colorAnimate() {
       var counter = 0;
       setInterval(function () {
+        if(counter < 51)
         counter = counter + 10;
+        else{
+          counter = counter - 10;
+        }
         document.querySelector("svg.scene").style.filter =
           "hue-rotate(" + counter + "deg)";
       }, 6000);
