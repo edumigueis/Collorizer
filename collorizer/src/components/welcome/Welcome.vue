@@ -1,13 +1,57 @@
 <template>
   <div>
     <section>
+      <link
+        rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+      />
+      <div id="menu-bar" class="white">
+        <div id="bar">
+          <div id="menu-bar-container-logo">
+            <div class="menu-bar-inner-logo">
+              <img src="/src/assets/images/fav-icon.svg" />
+            </div>
+          </div>
+          <div id="nav-bars">
+            <a href="/#/home">Create</a>
+            <a href="/#/home">Explore</a>
+            <a href="/#/">
+              About
+            </a>
+            <a href="/#/home">Blog</a>
+          </div>
+          <div class="menu-bar-left-bar">
+            <div id="menu-bar-search-box"></div>
+            <div class="menu-bar-chat-wp menu-bar-wp">
+              <div class="menu-bar-chat-inner">
+                <!--<img class="menu-bar-chat-pic">--><i
+                  class="fas fa-th"
+                ></i>
+              </div>
+            </div>
+            <div class="menu-bar-notif-wp menu-bar-wp">
+              <div class="menu-bar-notif-inner">
+                <i class="fas fa-angle-double-down"></i>
+              </div>
+            </div>
+            <div class="menu-bar-post-wp menu-bar-wp">
+              <div class="menu-bar-post-inner">
+                <!--<img class="menu-bar-post-pic">-->
+                <i class="fab fa-github"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="overlay-content">
         <div class="text-content">
           <h1 class="main-title">Collorizer</h1>
-          <p>Everything you need colorwise, palettes creator, color mixin and a looott of tools for you.</p>
-          <a>Start Now</a>
+          <p>
+            Everything you need colorwise, palettes creator, color mixin and a
+            lot of tools for you.
+          </p>
+          <a class="call-to-action-btn">Start Now</a>
         </div>
-        
       </div>
 
       <svg
@@ -49,11 +93,11 @@
       </svg>
     </section>
 
-    <section class="palette"></section>
+    <section class="features"></section>
   </div>
 </template>
 <style lang="scss" scoped>
-@import url('https://fonts.googleapis.com/css2?family=Martel:wght@300;400;600;700;800;900&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Martel:wght@300;400;600;700;800;900&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 .overlay-content {
   position: absolute;
   top: 0;
@@ -96,25 +140,195 @@
 }
 
 .main-title {
-  font-family: 'Martel', serif;
-  font-size: 7.53464363vw;
-    font-weight: 500;
+  font-family: "Martel", serif;
+  font-size: 5.53464363vw;
+  font-weight: 400;
   width: 100%;
-  text-align: right;
   color: #fff;
 }
-.text-content{
+.text-content {
   position: absolute;
-  float: right;
   margin-right: 50px;
-  bottom: 30vh;
-  right: 0;
+  bottom: 40vh;
   color: #fff;
-  text-align: right;
-  width: 37vw;
-  p{
+  text-align: center;
+  width: 100%;
+  p {
     font-size: 1vw;
   }
+  .call-to-action-btn {
+    position: relative;
+    color: #f9f9f9;
+    background: transparent;
+    cursor: pointer;
+    font-size: 19px;
+    padding: 14px 28px;
+    margin-top: 40px;
+    font-weight: 700;
+    border-radius: 50px;
+    display: inline-block;
+    border: 2px solid #f9f9f9;
+    transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+  }
+  .call-to-action-btn:hover {
+    color: #ffffff;
+    border-color: #313742;
+    background-color: #313742;
+  }
+}
+#menu-bar {
+  width: 100vw;
+  z-index: 20;
+  height: fit-content;
+  background-color: transparent;
+  position: fixed;
+  /*border-bottom: 1px solid rgb(219, 219, 219);*/
+}
+
+#bar {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  width: calc(100vw - 64px);
+  margin: 10px 32px;
+  height: 45px;
+}
+
+.menu-bar-prof-pic {
+  width: 35px;
+  height: 35px;
+}
+
+.menu-bar-prof-mask {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 35px;
+  height: 35px;
+  margin-bottom: -4px;
+}
+
+.menu-bar-inner-logo {
+  width: 40px;
+}
+
+.menu-bar-inner-logo img {
+  width: 100%;
+}
+
+.fab {
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+}
+.fas {
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+}
+.far {
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.menu-bar-wp {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 9px;
+}
+
+#nav-bars a {
+  color: #fff;
+  padding: 0px 10px;
+  text-decoration: none;
+  height: 24px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+#nav-bars {
+  max-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+}
+
+.menu-bar-left-bar {
+  position: absolute;
+  right: 32px;
+  width: fit-content;
+  display: inline-flex;
+  top: 10px;
+}
+
+#search-menu-bar {
+  background-color: #f3f4f4;
+  border-radius: 12px;
+  color: #232323;
+  padding: 0px 8px 0px 35px;
+  height: 40px;
+  border: none !important;
+  outline: none;
+}
+
+.menu-bar-search-wp {
+  position: relative;
+  float: right;
+}
+
+.nav-search-icon {
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  color: #9e9ea7;
+  top: 12px;
+  margin-left: 10px;
+  z-index: 2;
+}
+
+.fill-current {
+  fill: currentColor;
+}
+
+.menu-bar-search-wp {
+  position: relative;
+  width: calc(100% - 520px);
+  display: flex;
+  flex-flow: row-reverse;
+  margin-right: 40px;
+  height: fit-content;
+}
+.menu-bar-search-wp > div {
+  height: fit-content;
+}
+
+.nav-wrapper *,
+.nav-wrapper *:before,
+.nav-wrapper *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.menu-bar-single-image {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.mega-nav-box .title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #0d0c22;
+  padding-bottom: 7px;
+  margin-top: 10px;
+}
+
+.mega-description {
+  font-size: 0.8em;
 }
 </style>
 
@@ -122,13 +336,7 @@
 export default {
   mounted() {
     this.animate();
-    document.querySelector("body").style.overflowY = "hidden";
-    document.querySelector("body").style.height = "100vh";
     this.colorAnimate();
-  },
-  destroyed() {
-    document.querySelector("body").style.overflowY = "auto";
-    document.querySelector("body").style.height = "100%";
   },
   methods: {
     animate() {
@@ -151,9 +359,8 @@ export default {
     colorAnimate() {
       var counter = 0;
       setInterval(function () {
-        if(counter < 51)
-        counter = counter + 10;
-        else{
+        if (counter < 51) counter = counter + 10;
+        else {
           counter = counter - 10;
         }
         document.querySelector("svg.scene").style.filter =
