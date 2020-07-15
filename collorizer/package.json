@@ -15,6 +15,7 @@
     "prettier": "^1.12.1",
     "stylus-loader": "^3.0.2",
     "vue": "^2.5.11",
+    "vue-color": "^2.7.1",
     "vue-page-transition": "^0.2.2",
     "vue-resource": "^1.5.1",
     "vue-router": "^3.3.4",

@@ -149,7 +149,7 @@
 .text-content {
   position: absolute;
   margin-right: 50px;
-  bottom: 40vh;
+  top: 30vh;
   color: #fff;
   text-align: center;
   width: 100%;
