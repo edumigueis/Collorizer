@@ -24,9 +24,7 @@
             <div id="menu-bar-search-box"></div>
             <div class="menu-bar-chat-wp menu-bar-wp">
               <div class="menu-bar-chat-inner">
-                <!--<img class="menu-bar-chat-pic">--><i
-                  class="fas fa-th"
-                ></i>
+                <!--<img class="menu-bar-chat-pic">--><i class="fas fa-th"></i>
               </div>
             </div>
             <div class="menu-bar-notif-wp menu-bar-wp">
@@ -93,7 +91,28 @@
       </svg>
     </section>
 
-    <section class="features"></section>
+    <section class="features">
+      <div class="grid-features">
+        <div class="grid-card"><div class="inner-grid-card">
+          <div class="icon-wrapper"><i class="fas fa-globe"></i></div>
+          <h3>Palettes Creator</h3>
+          <p></p>
+          </div>
+        </div>
+        <div class="grid-card"><div class="inner-grid-card">
+          <div class="icon-wrapper"><i class="fas fa-globe"></i></div>
+          <h3>Color Gallery</h3>
+          <p></p>
+          </div>
+        </div>
+        <div class="grid-card"><div class="inner-grid-card">
+          <div class="icon-wrapper"><i class="fas fa-globe"></i></div>
+          <h3></h3>
+          <p></p>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -307,29 +326,30 @@
 .menu-bar-search-wp > div {
   height: fit-content;
 }
-
-.nav-wrapper *,
-.nav-wrapper *:before,
-.nav-wrapper *:after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-.menu-bar-single-image {
+.features{
   width: 100%;
-  border-radius: 12px;
+  .grid-features{
+    display: grid;
+    max-width: 1400px;
+    margin: 60px auto;
+    padding: 0 40px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 50px;
+    .grid-card{
+      background: #2e2e2e;
+      text-align: center;
+      .inner-grid-card{
+        padding: 32px;
+        h3{
+          font-size: 1.5rem;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
 }
 
-.mega-nav-box .title {
-  font-size: 16px;
-  font-weight: 500;
-  color: #0d0c22;
-  padding-bottom: 7px;
-  margin-top: 10px;
-}
 
-.mega-description {
-  font-size: 0.8em;
-}
 </style>
 
 <script>

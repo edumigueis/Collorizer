@@ -1,12 +1,17 @@
 <template>
-  <div>
-    <section>
-      <h1>Palette Lab</h1>
-    </section>
-    <section class="color-wheel">
+  <div class="main-body">
+    <section class="header">
+      <div class="header-text">
+        <h1>Palette Creator</h1>
+        <p>Choose the colors you want in your palette</p>
+        <div class="bottom-text-indicators">
+          <p>{{ currentColor.hex }}</p>
+          <p>{{ currentColor.hsl }}</p>
+        </div>
+      </div>
+
       <div class="picker-wrap">
         <div class="picker-prop">
-          <p>{{ color1.hex }}</p>
           <div class="container">
             <div class="shape" :style="blobStyles"></div>
           </div>
@@ -16,27 +21,27 @@
     <section class="palette">
       <div class="palette-wrap">
         <div class="palette-prop">
-          <div id="first-color" class="palette-member">
+          <div id="first-color" class="palette-member" :style="style1">
             <div class="hidden-color-picking">
               <chrome-picker v-model="color1"></chrome-picker>
             </div>
           </div>
-          <div id="sec-color" class="palette-member">
+          <div id="sec-color" class="palette-member" :style="style2">
             <div class="hidden-color-picking">
               <chrome-picker v-model="color2"></chrome-picker>
             </div>
           </div>
-          <div id="third-color" class="palette-member">
+          <div id="third-color" class="palette-member" :style="style3">
             <div class="hidden-color-picking">
               <chrome-picker v-model="color3"></chrome-picker>
             </div>
           </div>
-          <div id="forth-color" class="palette-member">
+          <div id="forth-color" class="palette-member" :style="style4">
             <div class="hidden-color-picking">
               <chrome-picker v-model="color4"></chrome-picker>
             </div>
           </div>
-          <div id="sixth-color" class="palette-member">
+          <div id="sixth-color" class="palette-member" :style="style5">
             <div class="hidden-color-picking">
               <chrome-picker v-model="color5"></chrome-picker>
             </div>
@@ -47,16 +52,49 @@
   </div>
 </template>
 <style lang="scss" scoped>
+.main-body {
+  background: #1f1f1f;
+}
+.header {
+  width: 100%;
+  height: 200px;
+  background-color: rgb(46, 46, 46);
+  .header-text {
+    padding-top: 30px;
+    padding-left: 50px;
+    position: relative;
+    height: 100%;
+    .bottom-text-indicators {
+      position: absolute;
+      bottom: 10px;
+      display: flex;
+      left: 30px;
+      p{
+        color: #ffffff;
+        text-transform: uppercase;
+        margin-left: 20px;
+        font-size: 12px;
+      }
+    }
+    h1 {
+      font-size: 3rem;
+      color: #d8d8d8;
+    }
+    p {
+      font-size: 16px;
+      color: #d8d8d8;
+    }
+  }
+}
 .picker-prop {
-  height: 700px;
-  width: 900px;
+  width: 100%;
   position: relative;
 }
 .palette {
   .palette-wrap {
-    margin: 0 auto;
-    max-width: 1300px;
-    padding: 0 40px;
+    margin: 0px auto;
+    max-width: 1900px;
+    padding: 40px 40px;
     .palette-prop {
       display: flex;
       justify-content: space-evenly;
@@ -66,26 +104,15 @@
         flex: 1 1;
         background-color: aqua;
         height: 600px;
-        &:hover .hidden-color-picking{
-            display: block;
+        &:hover .hidden-color-picking {
+          display: block;
         }
-        .hidden-color-picking{
-            display: none;
-        }
-        &:nth-child(1){
-            background-color: #35567d;
-        }
-        &:nth-child(2){
-            background-color: #6c5b7b;
-        }
-        &:nth-child(3){
-            background-color: #c06c84;
-        }
-        &:nth-child(4){
-            background-color: #f67280;
-        }
-        &:nth-child(5){
-            background-color: #f8b195;
+        .hidden-color-picking {
+          display: none;
+          position: absolute;
+          top: -30px;
+          left: -20px;
+          z-index: 40;
         }
       }
     }
@@ -96,15 +123,19 @@
   display: flex;
   height: 100%;
   justify-content: center;
-}
+  width: 600px;
+  position: absolute;
+  top: -230px;
+  right: 0;
 
-.shape {
-  animation: morph 8s ease-in-out infinite;
-  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-  height: 400px;
-  transition: all 1s ease-in-out;
-  width: 400px;
-  z-index: 5;
+  .shape {
+    animation: morph 8s ease-in-out infinite;
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    height: 400px;
+    transition: all 1s ease-in-out;
+    width: 600px;
+    z-index: 5;
+  }
 }
 
 @keyframes morph {
@@ -125,11 +156,11 @@
 <script>
 import { Photoshop } from "vue-color";
 import { Chrome } from "vue-color";
-var color1 = "#35567d"
-var color2 = "#6c5b7b"
-var color3 = "#c06c84"
-var color4 = "#f67280"
-var color5 = "#f8b195"
+var color1 = { hex: "#35567dff", hsl: { h: 213, s: 0.4, l: 0.35, a: 1 } };
+var color2 = { hex: "#6c5b7bff", hsl: { h: 272, s: 0.15, l: 0.42, a: 1 }  };
+var color3 = { hex: "#c06c84ff", hsl: { h: 343, s: 0.4, l: 0.59, a: 1 } };
+var color4 = { hex: "#f67280ff", hsl: { h: 354, s: 0.88, l: 0.71, a: 1 } };
+var color5 = { hex: "#f8b195ff", hsl: { h: 17, s: 0.88, l: 0.78, a: 1 } };
 var color6 = {
   hex: "#194d33",
   hsl: { h: 150, s: 0.5, l: 0.2, a: 1 },
@@ -166,6 +197,7 @@ var color10 = {
   a: 1,
 };
 var amount = 5;
+var currentColor = color1;
 export default {
   data() {
     return {
@@ -180,6 +212,7 @@ export default {
       color9,
       color10,
       amount,
+      currentColor,
     };
   },
   methods: {},
@@ -227,6 +260,36 @@ export default {
       }
       return {
         background: res,
+      };
+    },
+    style1() {
+      this.currentColor = color1;
+      return {
+        "background-color": this.color1.hex,
+      };
+    },
+    style2() {
+      this.currentColor = color2;
+      return {
+        "background-color": this.color2.hex,
+      };
+    },
+    style3() {
+      this.currentColor = color3;
+      return {
+        "background-color": this.color3.hex,
+      };
+    },
+    style4() {
+      this.currentColor = color4;
+      return {
+        "background-color": this.color4.hex,
+      };
+    },
+    style5() {
+      this.currentColor = color5;
+      return {
+        "background-color": this.color5.hex,
       };
     },
   },

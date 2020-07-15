@@ -12,6 +12,7 @@
   "dependencies": {
     "jquery": "^3.5.1",
     "js-yaml": "^3.14.0",
+    "node-vibrant": "^3.1.5",
     "prettier": "^1.12.1",
     "stylus-loader": "^3.0.2",
     "vue": "^2.5.11",
