@@ -72,7 +72,4 @@ ul {
   padding: 0;
 }
 
-li {
-  display: inline-block;
-}
 </style>
