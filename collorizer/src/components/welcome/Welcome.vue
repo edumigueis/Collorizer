@@ -29,7 +29,10 @@
             </div>
             <div class="menu-bar-notif-wp menu-bar-wp">
               <div class="menu-bar-notif-inner">
-                <i class="fas fa-angle-double-down"></i>
+                <i
+                  class="fas fa-angle-double-down"
+                  v-on:click="scrollToFeatures()"
+                ></i>
               </div>
             </div>
             <div class="menu-bar-post-wp menu-bar-wp">
@@ -93,24 +96,159 @@
 
     <section class="features">
       <div class="grid-features">
-        <div class="grid-card"><div class="inner-grid-card">
-          <div class="icon-wrapper"><i class="fas fa-globe"></i></div>
-          <h3>Palettes Creator</h3>
-          <p></p>
+        <div class="grid-card">
+          <div class="inner-grid-card">
+            <div class="icon-wrapper">
+              <img src="/src/assets/images/blob.svg" /><i
+                class="fas fa-palette"
+              ></i>
+            </div>
+            <h3>Palettes Creator</h3>
+            <p>
+              Create the perfect palette for your design project. Checkout
+              images with that palette and adjust it however you want.
+            </p>
+            <a class="call-to-sub-action" href="/#/image/palette"
+              >Check it Out</a
+            >
           </div>
         </div>
-        <div class="grid-card"><div class="inner-grid-card">
-          <div class="icon-wrapper"><i class="fas fa-globe"></i></div>
-          <h3>Color Gallery</h3>
-          <p></p>
+        <div class="grid-card">
+          <div class="inner-grid-card">
+            <div class="icon-wrapper">
+              <img src="/src/assets/images/blob.svg" /><i
+                class="fas fa-th-large"
+              ></i>
+            </div>
+            <h3>Color Gallery</h3>
+            <p>
+              Create the perfect palette for your design project. Checkout
+              images with that palette and adjust it however you want.
+            </p>
+            <a class="call-to-sub-action" href="/#/image/palette"
+              >Check it Out</a
+            >
           </div>
         </div>
-        <div class="grid-card"><div class="inner-grid-card">
-          <div class="icon-wrapper"><i class="fas fa-globe"></i></div>
-          <h3></h3>
-          <p></p>
+        <div class="grid-card">
+          <div class="inner-grid-card">
+            <div class="icon-wrapper">
+              <img src="/src/assets/images/blob.svg" /><i
+                class="fas fa-images"
+              ></i>
+            </div>
+            <h3>Amazing</h3>
+            <p>
+              Create the perfect palette for your design project. Checkout
+              images with that palette and adjust it however you want.
+            </p>
+            <a class="call-to-sub-action" href="/#/image/palette"
+              >Check it Out</a
+            >
           </div>
         </div>
+      </div>
+    </section>
+    <section class="masonry-wrapper">
+      <div class="separator-div"></div>
+      <h1 class="masonry-title">Creative Colors</h1>
+      <div class="masonry">
+        <div class="brick">
+          <img src="/src/assets/images/masonry-1.jpg" />
+          <div style="background-color: #2d8d9f;"></div>
+          <div style="background-color: #2a7278;"></div>
+          <div style="background-color: #62b4c1;"></div>
+          <div style="background-color: #c9d8da;"></div>
+          <div style="background-color: #28201c;"></div>
+        </div>
+        <div class="brick">
+          <img src="/src/assets/images/masonry-2.jpg" />
+          <div style="background-color: #e7c2b3;"></div>
+          <div style="background-color: #c49c85;"></div>
+          <div style="background-color: #bac5c3;"></div>
+          <div style="background-color: #403e43;"></div>
+          <div style="background-color: #9ca19d;"></div>
+        </div>
+        <div class="brick">
+          <img src="/src/assets/images/masonry-3.jpg" />
+          <div style="background-color: #f6ded4;"></div>
+          <div style="background-color: #db755c;"></div>
+          <div style="background-color: #672d1d;"></div>
+          <div style="background-color: #080605;"></div>
+          <div style="background-color: #36190e;"></div>
+        </div>
+        <div class="brick">
+          <img src="/src/assets/images/masonry-4.jpg" />
+          <div style="background-color: #c44b40;"></div>
+          <div style="background-color: #914330;"></div>
+          <div style="background-color: #272723;"></div>
+          <div style="background-color: #97a59f;"></div>
+          <div style="background-color: #c3a592;"></div>
+        </div>
+        <div class="brick">
+          <img src="/src/assets/images/masonry-5.jpg" />
+          <div style="background-color: #4c8499;"></div>
+          <div style="background-color: #5f4342;"></div>
+          <div style="background-color: #b5b2ba;"></div>
+          <div style="background-color: #30333a;"></div>
+          <div style="background-color: #6c6e77;"></div>
+          <div style="background-color: #b8979e;"></div>
+        </div>
+        <div class="brick">
+          <img src="/src/assets/images/masonry-6.jpg" />
+          <div style="background-color: #04647d;"></div>
+          <div style="background-color: #064a65;"></div>
+          <div style="background-color: #1495a4;"></div>
+          <div style="background-color: #c6d6da;"></div>
+          <div style="background-color: #5bb1b9;"></div>
+        </div>
+        <div class="brick">
+          <img src="/src/assets/images/masonry-7.jpg" />
+          <div style="background-color: #40b0bb;"></div>
+          <div style="background-color: #937347;"></div>
+          <div style="background-color: #36342f;"></div>
+          <div style="background-color: #724c39;"></div>
+          <div style="background-color: #d8d7d6;"></div>
+        </div>
+        <div class="brick">
+          <img src="/src/assets/images/masonry-8.jpg" />
+          <div style="background-color: #f9c20d;"></div>
+          <div style="background-color: #e8c093;"></div>
+          <div style="background-color: #8a899a;"></div>
+          <div style="background-color: #634526;"></div>
+          <div style="background-color: #d7d6e5;"></div>
+          <div style="background-color: #594546;"></div>
+        </div>
+        <div class="brick">
+          <img src="/src/assets/images/masonry-9.jpg" />
+          <div style="background-color: #38d7f9;"></div>
+          <div style="background-color: #f61da8;"></div>
+          <div style="background-color: #fe5b9a;"></div>
+          <div style="background-color: #f7b2c3;"></div>
+          <div style="background-color: #093757;"></div>
+          <div style="background-color: #62dc34;"></div>
+        </div>
+        <div class="brick">
+          <img src="/src/assets/images/masonry-10.jpg" />
+          <div style="background-color: #04b7bf;"></div>
+          <div style="background-color: #faa96a;"></div>
+          <div style="background-color: #c3aba3;"></div>
+          <div style="background-color: #8ea39f;"></div>
+          <div style="background-color: #f59754;"></div>
+        </div>
+        <div class="brick">
+          <img src="/src/assets/images/masonry-11.jpg" />
+          <div style="background-color: #adf3fb;"></div>
+          <div style="background-color: #a22861;"></div>
+          <div style="background-color: #3b818b;"></div>
+          <div style="background-color: #cf7694;"></div>
+          <div style="background-color: #7b2237;"></div>
+        </div>
+      </div>
+      <div class="last-wrapper">
+        <h1 class="title">Like What You See?</h1>
+        <p class="sub">Experiment our tools. We hope you like it!</p>
+        <a href="/#/create" class="call-to-action-btn">Start Now</a>
       </div>
     </section>
   </div>
@@ -242,7 +380,12 @@
   font-size: 24px;
   cursor: pointer;
 }
-.fas {
+.fas.fa-th {
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+}
+.fas.fa-angle-double-down {
   color: #ffffff;
   font-size: 24px;
   cursor: pointer;
@@ -326,30 +469,150 @@
 .menu-bar-search-wp > div {
   height: fit-content;
 }
-.features{
+.features {
   width: 100%;
-  .grid-features{
+  .grid-features {
     display: grid;
     max-width: 1400px;
     margin: 60px auto;
     padding: 0 40px;
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 50px;
-    .grid-card{
+    .grid-card {
       background: #2e2e2e;
       text-align: center;
-      .inner-grid-card{
+      .inner-grid-card {
         padding: 32px;
-        h3{
-          font-size: 1.5rem;
+        h3 {
+          font-size: 1.7rem;
           margin-top: 20px;
+          font-family: "Martel", sans-serif;
+          font-weight: 700;
+          letter-spacing: 0.1rem;
+        }
+        p {
+          width: 80%;
+          margin: 20px 10%;
+          letter-spacing: 0.05rem;
+        }
+        .icon-wrapper {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          img {
+            position: relative;
+            width: 75px;
+            z-index: 1;
+          }
+          i {
+            position: absolute;
+            font-size: 40px !important;
+            z-index: 3;
+            top: 15px;
+          }
         }
       }
     }
   }
 }
-
-
+.call-to-sub-action {
+  position: relative;
+  color: #f9f9f9;
+  background: transparent;
+  cursor: pointer;
+  font-size: 17px;
+  padding: 10px 20px;
+  margin-top: 30px;
+  font-weight: 600;
+  border-radius: 50px;
+  display: inline-block;
+  border: 2px solid #f9f9f9;
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  &:hover {
+    color: #ffffff;
+    border-color: #313742;
+    background-color: #313742;
+  }
+}
+.masonry {
+  column-count: 3;
+  column-gap: 0;
+  max-width: 1400px;
+  padding: 0 40px;
+  margin: 0 auto;
+  .brick {
+    break-inside: avoid;
+    padding: 5px;
+    div {
+      width: 100%;
+      height: 40px;
+    }
+    img {
+      width: 100%;
+      margin-bottom: -4px;
+    }
+  }
+}
+.masonry-title{
+  font-size: 2.5rem;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.separator-div{
+  width: 50vw;
+  height: 120px;
+  border-right: 1px solid gray;
+  margin-bottom: 20px;
+}
+.last-wrapper{
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-bottom: 300px;
+  .title{
+    width: 100%;
+    text-align: center;
+    font-family: 'Martel', serif;
+    letter-spacing: 0.2rem;
+    font-size: 2.5rem;
+  }
+  .sub{
+    width: 100%;
+    text-align: center;
+    letter-spacing: 0.2rem;
+    font-size: 16px;
+  }
+  .call-to-action-btn {
+    position: relative;
+    color: #f9f9f9;
+    background: transparent;
+    cursor: pointer;
+    font-size: 19px;
+    padding: 14px 28px;
+    margin-top: 40px;
+    font-weight: 700;
+    border-radius: 50px;
+    display: inline-block;
+    border: 2px solid #f9f9f9;
+    transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+  }
+  .call-to-action-btn:hover {
+    color: #ffffff;
+    border-color: #313742;
+    background-color: #313742;
+  }
+}
 </style>
 
 <script>
@@ -386,6 +649,10 @@ export default {
         document.querySelector("svg.scene").style.filter =
           "hue-rotate(" + counter + "deg)";
       }, 6000);
+    },
+
+    scrollToFeatures() {
+      $("html, body").animate({ scrollTop: $(".features").offset().top }, 800);
     },
   },
 };
