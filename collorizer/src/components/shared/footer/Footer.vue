@@ -36,20 +36,20 @@
         </div>
         <div class="column">
           <div class="inner-box flex">
-            <a href="/create">Create</a><a href="/explore">Explore</a
-            ><a href="/create/palette">Create Palette</a>
+            <a href="/#/create">Create</a><a href="/explore">Explore</a
+            ><a href="/#/create/palette">Create Palette</a>
           </div>
         </div>
         <div class="column">
           <div class="inner-box flex">
-            <a href="/create">Create</a><a href="/explore">Explore</a
-            ><a href="/create/palette">Create Palette</a>
+            <a href="/#/create">Image Palette</a><a href="/explore">Learn</a
+            ><a href="/#/create/palette">Creator</a>
           </div>
         </div>
         <div class="column">
           <div class="inner-box flex">
-            <a href="/create">Create</a><a href="/explore">Explore</a
-            ><a href="/create/palette">Create Palette</a>
+            <a href="/#/create">Suggestion</a><a href="/explore">Light Mode</a
+            ><a href="/#/create/palette">Terms and Privacy</a>
           </div>
         </div>
       </div>
@@ -118,7 +118,7 @@
               </div>
               <img
                 class="select-box__icon"
-                src="http://cdn.onlinewebfonts.com/svg/img_295694.svg"
+                src="http://#/cdn.onlinewebfonts.com/svg/img_295694.svg"
                 alt="Arrow Icon"
                 aria-hidden="true"
               />

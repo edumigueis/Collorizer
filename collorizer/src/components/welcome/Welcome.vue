@@ -9,7 +9,7 @@
         <div id="bar">
           <div id="menu-bar-container-logo">
             <div class="menu-bar-inner-logo">
-              <img src="/src/assets/images/fav-icon.svg" />
+              <img src="/src/assets/images/logo.svg" />
             </div>
           </div>
           <div id="nav-bars">
@@ -70,7 +70,7 @@
           </h1>
           <p>
             Everything you need when it comes to color, palettes creator,
-            color manipulation, <br />image palette colection and so many more tools
+            color manipulation, <br class="line-break"/>image palette colection and so many more tools
             for you.
           </p>
           <a class="call-to-action-btn">Start Now</a>
@@ -177,94 +177,96 @@
       <div class="masonry">
         <div class="brick">
           <img src="/src/assets/images/masonry-1.jpg" />
-          <div style="background-color: #2d8d9f;"></div>
-          <div style="background-color: #2a7278;"></div>
-          <div style="background-color: #62b4c1;"></div>
-          <div style="background-color: #c9d8da;"></div>
-          <div style="background-color: #28201c;"></div>
+          <div style="background-color: #2d8d9f;"><p class="esp-color">#2d8d9f</p></div>
+          <div style="background-color: #2a7278;"><p class="esp-color">#2a7278</p></div>
+          <div style="background-color: #62b4c1;"><p class="esp-color">#62b4c1</p></div>
+          <div style="background-color: #c9d8da;"><p class="esp-color">#c9d8da</p></div>
+          <div style="background-color: #28201c;"><p class="esp-color">#28201c</p></div>
+          <div style="background-color: #D0BDB4;"><p class="esp-color">#D0BDB4</p></div>
+          
         </div>
         <div class="brick">
           <img src="/src/assets/images/masonry-2.jpg" />
-          <div style="background-color: #e7c2b3;"></div>
-          <div style="background-color: #c49c85;"></div>
-          <div style="background-color: #bac5c3;"></div>
-          <div style="background-color: #403e43;"></div>
-          <div style="background-color: #9ca19d;"></div>
+          <div style="background-color: #e7c2b3;"><p class="esp-color">#e7c2b3</p></div>
+          <div style="background-color: #c49c85;"><p class="esp-color">#c49c85</p></div>
+          <div style="background-color: #bac5c3;"><p class="esp-color">#bac5c3</p></div>
+          <div style="background-color: #403e43;"><p class="esp-color">#403e43</p></div>
+          <div style="background-color: #9ca19d;"><p class="esp-color">#9ca19d</p></div>
         </div>
         <div class="brick">
           <img src="/src/assets/images/masonry-3.jpg" />
-          <div style="background-color: #f6ded4;"></div>
-          <div style="background-color: #db755c;"></div>
-          <div style="background-color: #672d1d;"></div>
-          <div style="background-color: #080605;"></div>
-          <div style="background-color: #36190e;"></div>
+          <div style="background-color: #f6ded4;"><p class="esp-color">#f6ded4</p></div>
+          <div style="background-color: #db755c;"><p class="esp-color">#db755c</p></div>
+          <div style="background-color: #672d1d;"><p class="esp-color">#672d1d</p></div>
+          <div style="background-color: #080605;"><p class="esp-color">#080605</p></div>
+          <div style="background-color: #36190e;"><p class="esp-color">#36190e</p></div>
         </div>
         <div class="brick">
           <img src="/src/assets/images/masonry-4.jpg" />
-          <div style="background-color: #c44b40;"></div>
-          <div style="background-color: #914330;"></div>
-          <div style="background-color: #272723;"></div>
-          <div style="background-color: #97a59f;"></div>
-          <div style="background-color: #c3a592;"></div>
+          <div style="background-color: #c44b40;"><p class="esp-color">#c44b40</p></div>
+          <div style="background-color: #914330;"><p class="esp-color">#914330</p></div>
+          <div style="background-color: #272723;"><p class="esp-color">#272723</p></div>
+          <div style="background-color: #97a59f;"><p class="esp-color">#97a59f</p></div>
+          <div style="background-color: #c3a592;"><p class="esp-color">#c3a592</p></div>
         </div>
         <div class="brick">
           <img src="/src/assets/images/masonry-5.jpg" />
-          <div style="background-color: #4c8499;"></div>
-          <div style="background-color: #5f4342;"></div>
-          <div style="background-color: #b5b2ba;"></div>
-          <div style="background-color: #30333a;"></div>
-          <div style="background-color: #6c6e77;"></div>
-          <div style="background-color: #b8979e;"></div>
+          <div style="background-color: #4c8499;"><p class="esp-color">#4c8499</p></div>
+          <div style="background-color: #5f4342;"><p class="esp-color">#5f4342</p></div>
+          <div style="background-color: #b5b2ba;"><p class="esp-color">#b5b2ba</p></div>
+          <div style="background-color: #30333a;"><p class="esp-color">#30333a</p></div>
+          <div style="background-color: #6c6e77;"><p class="esp-color">#6c6e77</p></div>
+          <div style="background-color: #b8979e;"><p class="esp-color">#b8979e</p></div>
         </div>
         <div class="brick">
           <img src="/src/assets/images/masonry-6.jpg" />
-          <div style="background-color: #04647d;"></div>
-          <div style="background-color: #064a65;"></div>
-          <div style="background-color: #1495a4;"></div>
-          <div style="background-color: #c6d6da;"></div>
-          <div style="background-color: #5bb1b9;"></div>
+          <div style="background-color: #04647d;"><p class="esp-color">#04647d</p></div>
+          <div style="background-color: #064a65;"><p class="esp-color">#064a65</p></div>
+          <div style="background-color: #1495a4;"><p class="esp-color">#1495a4</p></div>
+          <div style="background-color: #c6d6da;"><p class="esp-color">#c6d6da</p></div>
+          <div style="background-color: #5bb1b9;"><p class="esp-color">#5bb1b9</p></div>
         </div>
         <div class="brick">
           <img src="/src/assets/images/masonry-7.jpg" />
-          <div style="background-color: #40b0bb;"></div>
-          <div style="background-color: #937347;"></div>
-          <div style="background-color: #36342f;"></div>
-          <div style="background-color: #724c39;"></div>
-          <div style="background-color: #d8d7d6;"></div>
+          <div style="background-color: #40b0bb;"><p class="esp-color">#40b0bb</p></div>
+          <div style="background-color: #937347;"><p class="esp-color">#937347</p></div>
+          <div style="background-color: #36342f;"><p class="esp-color">#36342f</p></div>
+          <div style="background-color: #724c39;"><p class="esp-color">#724c39</p></div>
+          <div style="background-color: #d8d7d6;"><p class="esp-color">#d8d7d6</p></div>
         </div>
         <div class="brick">
           <img src="/src/assets/images/masonry-8.jpg" />
-          <div style="background-color: #f9c20d;"></div>
-          <div style="background-color: #e8c093;"></div>
-          <div style="background-color: #8a899a;"></div>
-          <div style="background-color: #634526;"></div>
-          <div style="background-color: #d7d6e5;"></div>
-          <div style="background-color: #594546;"></div>
+          <div style="background-color: #f9c20d;"><p class="esp-color">#f9c20d</p></div>
+          <div style="background-color: #e8c093;"><p class="esp-color">#e8c093</p></div>
+          <div style="background-color: #8a899a;"><p class="esp-color">#8a899a</p></div>
+          <div style="background-color: #634526;"><p class="esp-color">#634526</p></div>
+          <div style="background-color: #d7d6e5;"><p class="esp-color">#d7d6e5</p></div>
+          <div style="background-color: #594546;"><p class="esp-color">#594546</p></div>
         </div>
         <div class="brick">
           <img src="/src/assets/images/masonry-9.jpg" />
-          <div style="background-color: #38d7f9;"></div>
-          <div style="background-color: #f61da8;"></div>
-          <div style="background-color: #fe5b9a;"></div>
-          <div style="background-color: #f7b2c3;"></div>
-          <div style="background-color: #093757;"></div>
-          <div style="background-color: #62dc34;"></div>
+          <div style="background-color: #38d7f9;"><p class="esp-color">#38d7f9</p></div>
+          <div style="background-color: #f61da8;"><p class="esp-color">#f61da8</p></div>
+          <div style="background-color: #fe5b9a;"><p class="esp-color">#fe5b9a</p></div>
+          <div style="background-color: #f7b2c3;"><p class="esp-color">#f7b2c3</p></div>
+          <div style="background-color: #093757;"><p class="esp-color">#093757</p></div>
+          <div style="background-color: #62dc34;"><p class="esp-color">#62dc34</p></div>
         </div>
         <div class="brick">
           <img src="/src/assets/images/masonry-10.jpg" />
-          <div style="background-color: #04b7bf;"></div>
-          <div style="background-color: #faa96a;"></div>
-          <div style="background-color: #c3aba3;"></div>
-          <div style="background-color: #8ea39f;"></div>
-          <div style="background-color: #f59754;"></div>
+          <div style="background-color: #04b7bf;"><p class="esp-color">#04b7bf</p></div>
+          <div style="background-color: #faa96a;"><p class="esp-color">#faa96a</p></div>
+          <div style="background-color: #c3aba3;"><p class="esp-color">#c3aba3</p></div>
+          <div style="background-color: #8ea39f;"><p class="esp-color">#8ea39f</p></div>
+          <div style="background-color: #f59754;"><p class="esp-color">#f59754</p></div>
         </div>
         <div class="brick">
           <img src="/src/assets/images/masonry-11.jpg" />
-          <div style="background-color: #adf3fb;"></div>
-          <div style="background-color: #a22861;"></div>
-          <div style="background-color: #3b818b;"></div>
-          <div style="background-color: #cf7694;"></div>
-          <div style="background-color: #7b2237;"></div>
+          <div style="background-color: #adf3fb;"><p class="esp-color">#adf3fb</p></div>
+          <div style="background-color: #a22861;"><p class="esp-color">#a22861</p></div>
+          <div style="background-color: #3b818b;"><p class="esp-color">#3b818b</p></div>
+          <div style="background-color: #cf7694;"><p class="esp-color">#cf7694</p></div>
+          <div style="background-color: #7b2237;"><p class="esp-color">#7b2237</p></div>
         </div>
       </div>
       <div class="last-wrapper">
@@ -322,6 +324,15 @@
 .main-title {
   width: 36%;
   margin: 20px auto;
+  @media screen and (max-width: 1350px){
+    width: 50%;
+  }
+  @media screen and (min-width: 2050px){
+    width: 30%;
+  }
+  @media screen and (max-width: 700px){
+    width: 70%;
+  }
 }
 .text-content {
   position: absolute;
@@ -334,6 +345,14 @@
     font-size: 16px;
     font-weight: 500;
     line-height: 23px;
+    @media screen and (min-width: 1650px){
+    font-size: 26px;
+    line-height: 33px;
+  }
+  @media screen and (min-width: 1450px){
+    font-size: 20px;
+    line-height: 25px;
+  }
   }
   .call-to-action-btn {
     position: relative;
@@ -390,7 +409,8 @@
 }
 
 .menu-bar-inner-logo {
-  width: 40px;
+  width: 80px;
+  padding-top: 8px;
 }
 
 .menu-bar-inner-logo img {
@@ -500,6 +520,15 @@
     padding: 0 40px;
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 50px;
+    @media screen and (min-width: 701px) and (max-width: 1050px){
+      grid-template-columns: repeat(2, 1fr);
+      grid-row-gap: 50px;
+    }
+    @media screen and (max-width: 700px){
+      grid-template-columns: repeat(1, 1fr);
+      grid-row-gap: 40px;
+      padding: 0 30px;
+    }
     .grid-card {
       background: #2e2e2e;
       text-align: center;
@@ -566,12 +595,26 @@
   max-width: 1400px;
   padding: 0 40px;
   margin: 0 auto;
+  @media screen and (min-width: 701px) and (max-width: 1050px){
+    column-count: 2;
+  }
+  @media screen and (max-width: 700px){
+    column-count: 1;
+    padding: 0 30px;
+  }
   .brick {
     break-inside: avoid;
     padding: 5px;
     div {
       width: 100%;
       height: 40px;
+      display: flex;
+      align-items: center;
+      &:hover{
+        .esp-color{
+          opacity: 1;
+        }
+      }
     }
     img {
       width: 100%;
@@ -609,6 +652,10 @@
     text-align: center;
     letter-spacing: 0.2rem;
     font-size: 16px;
+    @media screen and (max-width: 540px){
+      width: 85%;
+      margin: 0 auto;
+    }
   }
   .call-to-action-btn {
     position: relative;
@@ -633,6 +680,20 @@
     border-color: #313742;
     background-color: #313742;
   }
+}
+.line-break{
+  @media screen and (max-width: 700px){
+    display: none;
+  }
+}
+.esp-color{
+  opacity: 0;
+  transition: 0.25s all;
+  text-transform: uppercase;
+  width: 100%;
+  font-weight: bold;
+  padding-left: 10px;
+  font-size: 15px;
 }
 </style>
 
