@@ -1,10 +1,6 @@
 <template>
   <div>
     <section>
-      <link
-        rel="stylesheet"
-        href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
-      />
       <div id="menu-bar" class="white">
         <div id="bar">
           <div id="menu-bar-container-logo">
@@ -13,12 +9,12 @@
             </div>
           </div>
           <div id="nav-bars">
-            <a href="/#/home">Create</a>
-            <a href="/#/home">Explore</a>
-            <a href="/#/">
+            <a href="/#/create">Create</a>
+            <a href="/#/explore">Explore</a>
+            <a href="/#/about">
               About
             </a>
-            <a href="/#/home">Blog</a>
+            <a href="/#/blog">Blog</a>
           </div>
           <div class="menu-bar-left-bar">
             <div id="menu-bar-search-box"></div>

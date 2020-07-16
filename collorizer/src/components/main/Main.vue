@@ -1,7 +1,8 @@
 <template>
   <div class="main">
+    <my-menu></my-menu>
     <div class="header-pag">
-      <h1>Collorize Tools</h1>
+      <h1>Collorizer Tools</h1>
       <h2>Select the tool that fits your needs.</h2>
     </div>
 
@@ -176,7 +177,7 @@
 
 .main {
   .header-pag {
-    margin-top: 96px;
+    margin: 126px 0 67px 0;
     h1 {
       font-size: 2.3rem;
       letter-spacing: 0.05rem;
@@ -195,9 +196,11 @@
 
 <script>
 import Footer from "../shared/footer/Footer";
+import Menu from "../shared/menu/Menu";
 export default {
   components: {
     "my-footer": Footer,
+    "my-menu": Menu
   }
 };
 </script>
