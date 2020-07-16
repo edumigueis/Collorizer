@@ -1,41 +1,44 @@
 <template>
-        <div id="menu-bar" class="white">
-        <div id="bar">
-          <div id="menu-bar-container-logo">
-            <div class="menu-bar-inner-logo">
-              <img src="/src/assets/images/logo.svg" />
-            </div>
-          </div>
-          <div id="nav-bars">
-            <a href="/#/home">Create</a>
-            <a href="/#/home">Explore</a>
-            <a href="/#/">
-              About
+  <div id="menu-bar" class="white">
+    <div id="bar">
+      <div id="menu-bar-container-logo">
+        <div class="menu-bar-inner-logo">
+          <img src="/src/assets/images/logo.svg" />
+        </div>
+      </div>
+      <div id="nav-bars">
+        <a href="/#/create">Create</a>
+        <a href="/#/explore">Explore</a>
+        <a href="/#/about">
+          About
+        </a>
+        <a href="/#/blog">Blog</a>
+      </div>
+      <div class="menu-bar-left-bar">
+        <div id="menu-bar-search-box"></div>
+        <div class="menu-bar-chat-wp menu-bar-wp">
+          <div class="menu-bar-chat-inner">
+            <!--<img class="menu-bar-chat-pic">-->
+            <a href="/#/create">
+            <i class="fas fa-th"></i>
             </a>
-            <a href="/#/home">Blog</a>
           </div>
-          <div class="menu-bar-left-bar">
-            <div id="menu-bar-search-box"></div>
-            <div class="menu-bar-chat-wp menu-bar-wp">
-              <div class="menu-bar-chat-inner">
-                <!--<img class="menu-bar-chat-pic">--><i class="fas fa-th"></i>
-              </div>
-            </div>
-            <div class="menu-bar-post-wp menu-bar-wp">
-              <div class="menu-bar-post-inner">
-                <!--<img class="menu-bar-post-pic">-->
-                <i class="fab fa-github"></i>
-              </div>
-            </div>
+        </div>
+        <div class="menu-bar-post-wp menu-bar-wp">
+          <div class="menu-bar-post-inner">
+            <!--<img class="menu-bar-post-pic">-->
+            <a href="https://github.com/edumigueis" target="_blank">
+              <i class="fab fa-github"></i
+            ></a>
           </div>
         </div>
       </div>
+    </div>
+  </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style lang="scss" scoped>

@@ -20,7 +20,9 @@
             <div id="menu-bar-search-box"></div>
             <div class="menu-bar-chat-wp menu-bar-wp">
               <div class="menu-bar-chat-inner">
-                <!--<img class="menu-bar-chat-pic">--><i class="fas fa-th"></i>
+                 <a href="/#/create">
+            <i class="fas fa-th"></i>
+            </a>
               </div>
             </div>
             <div class="menu-bar-notif-wp menu-bar-wp">

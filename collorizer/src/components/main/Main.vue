@@ -9,7 +9,7 @@
     <section class="main-grid-wrapper">
       <div class="main-grid">
         <div class="block">
-          <a href="">
+          <a href="/#/create/palette">
             <div class="inner-block">
               <img
                 src="/src/assets/images/ilus-3.svg"
@@ -25,7 +25,7 @@
           </a>
         </div>
         <div class="block">
-          <a href="">
+          <a href="/#/image/palette">
             <div class="inner-block">
               <img
                 src="/src/assets/images/ilus-1.svg"
@@ -41,7 +41,7 @@
           </a>
         </div>
         <div class="block">
-          <a href="">
+          <a href="/#/lab">
             <div class="inner-block">
               <img src="/src/assets/images/color-wheel.png" alt="" />
               <div class="bottom-block">
@@ -138,7 +138,7 @@
 
 <style lang="scss" scoped>
 .main-grid {
-  margin-top: 40px;
+  margin: 40px auto;
   display: grid;
   max-width: 1400px;
   padding: 0 40px;
@@ -159,6 +159,15 @@
     &:hover {
       box-shadow: 0 8px 24px rgba(148, 148, 148, 0.07);
     }
+  }
+  @media screen and (max-width: 1200px){
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media screen and (max-width: 1000px){
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (max-width: 700px){
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 .block-title {
