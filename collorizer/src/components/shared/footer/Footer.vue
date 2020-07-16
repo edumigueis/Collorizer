@@ -118,7 +118,7 @@
               </div>
               <img
                 class="select-box__icon"
-                src="http://#/cdn.onlinewebfonts.com/svg/img_295694.svg"
+                src="/src/assets/images/arrow-up.svg"
                 alt="Arrow Icon"
                 aria-hidden="true"
               />

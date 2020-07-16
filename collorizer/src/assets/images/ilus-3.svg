@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="ilus-3.svg"
+   version="1.1"
+   viewBox="0 0 546.25007 280.17649"
+   height="280.17648"
+   width="546.25006"
+   data-name="Layer 1"
+   id="fafb0f89-a72a-431c-9009-ab2c777222ec">
+  <metadata
+     id="metadata81">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs79" />
+  <sodipodi:namedview
+     inkscape:current-layer="fafb0f89-a72a-431c-9009-ab2c777222ec"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-8"
+     inkscape:window-x="-8"
+     inkscape:cy="173.38066"
+     inkscape:cx="331.96316"
+     inkscape:zoom="1.6328406"
+     showgrid="false"
+     id="namedview77"
+     inkscape:window-height="705"
+     inkscape:window-width="1366"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <path
+     style="fill:#a6acec;fill-opacity:1;stroke-width:1.1748"
+     id="path12"
+     fill="#e6e6e6"
+     d="m 217.65388,49.83009 a 5.5770549,5.4817413 0 0 0 -5.5705,5.475359 V 164.81137 a 5.5770549,5.4817413 0 0 0 5.5705,5.47537 h 111.40996 a 5.5770549,5.4817413 0 0 0 5.5705,-5.47537 V 55.305391 a 5.5770549,5.4817413 0 0 0 -5.5705,-5.475359 z" />
+  <path
+     style="fill:#ace7ef;fill-opacity:1;stroke-width:1.1854"
+     id="path14"
+     fill="#3f3d56"
+     d="m 57.304635,48.544057 a 5.5899669,5.5681365 0 0 0 -5.583388,5.561654 V 165.33752 a 5.5899669,5.5681365 0 0 0 5.583388,5.56164 H 168.97248 a 5.5899669,5.5681365 0 0 0 5.58339,-5.56164 V 54.105652 a 5.5899669,5.5681365 0 0 0 -5.58339,-5.561654 z" />
+  <path
+     style="stroke-width:1.20209;fill:#a56cc1;fill-opacity:1"
+     id="path16"
+     fill="#6c63ff"
+     d="m 376.29966,47.830096 a 5.6950299,5.6203547 0 0 0 -5.68834,5.613811 V 165.71883 a 5.6950299,5.6203547 0 0 0 5.68834,5.61383 h 113.76668 a 5.6950299,5.6203547 0 0 0 5.6884,-5.61383 V 53.443847 a 5.6950299,5.6203547 0 0 0 -5.6884,-5.613811 z" />
+  <circle
+     style="fill:#a6acec;fill-opacity:1"
+     id="circle20"
+     opacity="0.8"
+     fill="#e6e6e6"
+     r="15.98322"
+     cy="207.78189"
+     cx="228.46605" />
+  <circle
+     style="fill:#a6acec;fill-opacity:1"
+     id="circle22"
+     opacity="0.4"
+     fill="#e6e6e6"
+     r="15.98322"
+     cy="207.78189"
+     cx="318.72424" />
+  <circle
+     style="fill:#a6acec;fill-opacity:1"
+     id="circle24"
+     opacity="0.6"
+     fill="#e6e6e6"
+     r="15.98322"
+     cy="207.78189"
+     cx="273.59515" />
+  <circle
+     style="fill:#ace7ef;fill-opacity:1"
+     id="circle26"
+     opacity="0.8"
+     fill="#3f3d56"
+     r="15.98322"
+     cy="207.78189"
+     cx="68.633873" />
+  <circle
+     style="fill:#ace7ef;fill-opacity:1"
+     id="circle28"
+     opacity="0.4"
+     fill="#3f3d56"
+     r="15.98322"
+     cy="207.78189"
+     cx="158.89204" />
+  <circle
+     style="fill:#ace7ef;fill-opacity:1"
+     r="15.98322"
+     id="circle30"
+     opacity="0.6"
+     fill="#3f3d56"
+     cy="207.78189"
+     cx="113.76296" />
+  <circle
+     style="fill:#a56cc1;fill-opacity:1"
+     id="circle32"
+     opacity="0.8"
+     fill="#6c63ff"
+     r="15.98322"
+     cy="207.78189"
+     cx="388.29825" />
+  <circle
+     style="fill:#a56cc1;fill-opacity:1"
+     id="circle34"
+     opacity="0.4"
+     fill="#6c63ff"
+     r="15.98322"
+     cy="207.78189"
+     cx="478.55643" />
+  <circle
+     style="fill:#a56cc1;fill-opacity:1"
+     id="circle36"
+     opacity="0.6"
+     fill="#6c63ff"
+     r="15.98322"
+     cy="207.78189"
+     cx="433.42734" />
+  <polygon
+     transform="translate(5e-5,5e-5)"
+     id="polygon38"
+     fill="#ffffff"
+     points="460.203,76.838 472.26,88.26 422.908,140.352 400.367,111.371 413.475,101.175 424.148,114.897 " />
+</svg>
