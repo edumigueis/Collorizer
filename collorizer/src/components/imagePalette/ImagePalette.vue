@@ -1,106 +1,121 @@
 <template>
   <div id="app" class="app-wrapper">
+    <my-menu></my-menu>
     <template>
       <div class="imagePalette">
-        <div class="left-wrapper">
-          <div class="links">
-            <label
-              class="image__upload--label"
-              for="upload"
-              title="Upload an image"
+        <div class="inner-image-pl">
+          <div class="left-wrapper">
+            <div class="links">
+              <label
+                class="image__upload--label"
+                for="upload"
+                title="Upload an image"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="35"
+                  height="35"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M11 3v2h-4v-2h4zm3 6l-2.519 4-2.481-1.96-4 5.96h14l-5-8zm-7.5 1c.828 0 1.5-.671 1.5-1.5 0-.828-.672-1.5-1.5-1.5s-1.5.672-1.5 1.5c0 .829.672 1.5 1.5 1.5zm10.5 9h-4v2h4v-2zm-6 2v-2h-4v2h4zm2-18v2h4v-2h-4zm6 0v2h3v3h2v-5h-5zm-17 2h3v-2h-5v5h2v-3zm20 14h-3v2h5v-5h-2v3zm0-5h2v-4h-2v4zm-20-4h-2v4h2v-4zm3 9h-3v-3h-2v5h5v-2z"
+                  />
+                </svg>
+                <input
+                  id="upload"
+                  class="image__upload"
+                  type="file"
+                  name="img"
+                  @change="uploadFile"
+                />
+              </label>
+              <button
+                @click="randomImage"
+                class="image__new"
+                title="Generate a new image"
+                :disabled="isLoading"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="35"
+                  height="35"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M9 12c0-.552.448-1 1.001-1s.999.448.999 1-.446 1-.999 1-1.001-.448-1.001-1zm6.2 0l-1.7 2.6-1.3-1.6-3.2 4h10l-3.8-5zm8.8-5v14h-20v-3h-4v-15h21v4h3zm-20 9v-9h15v-2h-17v11h2zm18-7h-16v10h16v-10z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              class="image__main"
+              :style="{ backgroundImage: 'url(' + imageSrc + ')' }"
+              :class="{ isLoading: isLoading }"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M11 3v2h-4v-2h4zm3 6l-2.519 4-2.481-1.96-4 5.96h14l-5-8zm-7.5 1c.828 0 1.5-.671 1.5-1.5 0-.828-.672-1.5-1.5-1.5s-1.5.672-1.5 1.5c0 .829.672 1.5 1.5 1.5zm10.5 9h-4v2h4v-2zm-6 2v-2h-4v2h4zm2-18v2h4v-2h-4zm6 0v2h3v3h2v-5h-5zm-17 2h3v-2h-5v5h2v-3zm20 14h-3v2h5v-5h-2v3zm0-5h2v-4h-2v4zm-20-4h-2v4h2v-4zm3 9h-3v-3h-2v5h5v-2z"
-                />
-              </svg>
-              <input
-                id="upload"
-                class="image__upload"
-                type="file"
-                name="img"
-                @change="uploadFile"
-              />
-            </label>
-            <button
-              @click="randomImage"
-              class="image__new"
-              title="Generate a new image"
-              :disabled="isLoading"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M9 12c0-.552.448-1 1.001-1s.999.448.999 1-.446 1-.999 1-1.001-.448-1.001-1zm6.2 0l-1.7 2.6-1.3-1.6-3.2 4h10l-3.8-5zm8.8-5v14h-20v-3h-4v-15h21v4h3zm-20 9v-9h15v-2h-17v11h2zm18-7h-16v10h16v-10z"
-                />
-              </svg>
-            </button>
+              <span :class="{ active: isLoading }" class="loading">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M14 22c0 1.104-.896 2-2 2s-2-.896-2-2 .896-2 2-2 2 .896 2 2zm-2-22c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm10 10c1.104 0 2 .896 2 2s-.896 2-2.001 2c-1.103 0-1.999-.895-1.999-2s.896-2 2-2zm-22 2c0 1.105.896 2 2 2s2-.895 2-2c0-1.104-.896-2-2-2s-2 .896-2 2zm19-9c1.104 0 2 .896 2 2s-.896 2-2.001 2c-1.103 0-1.999-.895-1.999-2s.896-2 2-2zm0 14c1.104 0 2 .896 2 2s-.896 2-2.001 2c-1.103 0-1.999-.895-1.999-2s.896-2 2-2zm-14-14c1.104 0 2 .896 2 2s-.896 2-2.001 2c-1.103 0-1.999-.895-1.999-2s.896-2 2-2zm0 14c1.104 0 2 .896 2 2s-.896 2-2.001 2c-1.103 0-1.999-.895-1.999-2s.896-2 2-2z"
+                  />
+                </svg>
+              </span>
+            </div>
           </div>
-          <div
-            class="image__main"
-            :style="{ backgroundImage: 'url(' + imageSrc + ')' }"
-            :class="{ isLoading: isLoading }"
-          >
-            <span :class="{ active: isLoading }" class="loading">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M14 22c0 1.104-.896 2-2 2s-2-.896-2-2 .896-2 2-2 2 .896 2 2zm-2-22c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm10 10c1.104 0 2 .896 2 2s-.896 2-2.001 2c-1.103 0-1.999-.895-1.999-2s.896-2 2-2zm-22 2c0 1.105.896 2 2 2s2-.895 2-2c0-1.104-.896-2-2-2s-2 .896-2 2zm19-9c1.104 0 2 .896 2 2s-.896 2-2.001 2c-1.103 0-1.999-.895-1.999-2s.896-2 2-2zm0 14c1.104 0 2 .896 2 2s-.896 2-2.001 2c-1.103 0-1.999-.895-1.999-2s.896-2 2-2zm-14-14c1.104 0 2 .896 2 2s-.896 2-2.001 2c-1.103 0-1.999-.895-1.999-2s.896-2 2-2zm0 14c1.104 0 2 .896 2 2s-.896 2-2.001 2c-1.103 0-1.999-.895-1.999-2s.896-2 2-2z"
-                />
-              </svg>
-            </span>
-          </div>
-        </div>
-        <div class="right-wrapper">
-          <div class="imagePalette__container">
-            <h1>COLORS</h1>
-            <ul class="swatch__container">
-              <li v-for="color in palette" class="swatch__wrapper">
-                <div :style="{ backgroundColor: color.hex }" class="swatch">
+          <div class="right-wrapper">
+            <div class="imagePalette__container">
+              <h1>Colors</h1>
+              <ul class="swatch__container">
+                <li v-for="color in palette" class="swatch__wrapper" title="Copy to clipboard">
                   <div
-                    :style="{ color: color.typeTextColor }"
-                    class="swatch__type"
+                    :style="{ backgroundColor: color.hex }"
+                    class="swatch"
+                    v-on:click="copyColor"
                   >
-                    № {{ color.number }}. {{ color.type }}
+                    <div
+                      :style="{ color: color.typeTextColor }"
+                      class="swatch__type"
+                    >
+                      № {{ color.number }}. {{ color.type }}
+                    </div>
+                    <div
+                      :style="{ color: color.hexTextColor }"
+                      class="swatch__hex"
+                    >
+                      {{ color.hex }}
+                    </div>
+                    <div
+                      :style="{ color: color.nameTextColor }"
+                      class="swatch__name"
+                    >
+                      {{ color.name }}
+                    </div>
                   </div>
-                  <div
-                    :style="{ color: color.hexTextColor }"
-                    class="swatch__hex"
-                  >
-                    {{ color.hex }}
-                  </div>
-                  <div
-                    :style="{ color: color.nameTextColor }"
-                    class="swatch__name"
-                  >
-                    {{ color.name }}
-                  </div>
-                </div>
-              </li>
-            </ul>
+                </li>
+              </ul>
+              <h3 class="credit-to-unsplash">Auto photos provided by Unsplash.</h3>
+            </div>
           </div>
         </div>
       </div>
     </template>
+    <my-footer></my-footer>
   </div>
 </template>
 
 <script>
+import Footer from "../shared/footer/Footer";
+import Menu from "../shared/menu/Menu";
 import Vibrant from "node-vibrant";
 export default {
+  components: {
+    "my-footer": Footer,
+    "my-menu": Menu
+  },
   data() {
     return {
       palette: [],
@@ -144,7 +159,7 @@ export default {
       const randomNumber = Math.floor(Math.random() * 633);
       this.isLoading = true;
       fetch(
-        `https://source.unsplash.com/collection/490175/500x250/?sig=${randomNumber}`
+        `https://source.unsplash.com/collection/490175/900x600/?sig=${randomNumber}`
       ).then((response) => {
         this.getPalette(response.url);
         this.isLoading = false;
@@ -164,6 +179,17 @@ export default {
         reader.readAsDataURL(file);
       }
     },
+    copyColor(eve) {
+      var parent = eve.target;
+
+      /* Get the text field */
+      var copyText = $(parent).find(".swatch__hex").text();
+      var $temp = $("<input>");
+      $("body").append($temp);
+      $temp.val(copyText).select();
+      document.execCommand("copy");
+      $temp.remove();
+    },
   },
 };
 </script>
@@ -181,28 +207,35 @@ label {
   cursor: pointer;
 }
 
-.app-wrapper {
-  display: flex;
-  justify-content: center;
-}
-
 .imagePalette {
   position: relative;
-  margin: 20px auto;
-  display: flex;
+  margin: 70px auto 30px auto;
   width: 100%;
-  max-width: 1400px;
-  padding: 0 40px;
-  background: #2e2e2e;
+  max-width: 1500px;
+
   border-radius: 4px;
   overflow: hidden;
-  box-shadow: 0 0 10px rgba(black, 0.25);
+
+  .inner-image-pl {
+    display: flex;
+    margin: 10px 40px;
+    background: #2e2e2e;
+    box-shadow: 0 0 10px rgba(black, 0.25);
+  }
 }
-.right-wrapper{
+.right-wrapper {
   flex: 1 1 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
-.left-wrapper{
+.left-wrapper {
   flex: 1 1 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 .imagePalette__container {
   padding: 0 1.6rem;
@@ -211,7 +244,7 @@ label {
 .image__main {
   position: relative;
   width: 100%;
-  height: 250px;
+  height: 500px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -234,10 +267,10 @@ label {
 .links {
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;
   background: #fff;
   padding: 10px 15px 5px;
-  border-radius: 0 0 0 4px;
+  border-radius: 0 0 4px 0;
   z-index: 10;
   svg {
     transition: opacity 0.3s ease;
@@ -267,10 +300,10 @@ label {
 
 h1 {
   margin: 1.4em 0;
-  font-size: 1.4em;
+  font-size: 2rem;
   letter-spacing: 2px;
   font-weight: 700;
-  color: #333;
+  color: #fcfcfc;
 }
 
 .swatch__container {
@@ -293,22 +326,26 @@ h1 {
   width: 30%;
   list-style: none;
   margin-bottom: 1.4em;
+  cursor: pointer;
 }
 .swatch__hex {
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 1.5px;
   padding: 0.3em 0 0.2em 0.3em;
+  pointer-events: none;
 }
 .swatch__name {
   font-size: 11px;
   color: #aaa;
   padding-left: 0.5em;
+    pointer-events: none;
 }
 .swatch__type {
   font-size: 13px;
   color: #aaa;
   padding: 1em 0 0.5em 0.5em;
+    pointer-events: none;
 }
 .loading {
   display: none;
@@ -325,7 +362,10 @@ h1 {
     height: 50px;
   }
 }
-
+.credit-to-unsplash{
+  font-weight: 500;
+  font-size: 14px;
+}
 @keyframes spin {
   100% {
     transform: rotate(360deg);
