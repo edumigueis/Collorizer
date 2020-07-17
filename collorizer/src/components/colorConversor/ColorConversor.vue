@@ -15,7 +15,7 @@
               type="text"
               name="input-color"
               id="input-color"
-              placeholder="HEX, HSL, ANSI..."
+              placeholder="HEX, HSL, RGB..."
               autofocus
               autocomplete="off"
             />
@@ -24,7 +24,12 @@
             <button class="convert-btn" v-on:click="convertColors">
               Convert
             </button>
-            <div class="color-repr" :style="selColor"></div>
+            <div
+              class="color-repr"
+              :style="selColor"
+              v-on:click="copyColor"
+              title="Copy to clipboard"
+            ></div>
           </div>
           <p id="warn"></p>
         </div>
@@ -36,7 +41,7 @@
             <input type="text" name="hex" id="hex" disabled />
           </div>
           <div class="form-group">
-            <label for="rgba">RGBA:</label>
+            <label for="rgba">RGB:</label>
             <input type="text" name="rgba" id="rgba" disabled />
           </div>
           <div class="form-group">
@@ -70,16 +75,16 @@
 import convert from "color-convert";
 import Footer from "../shared/footer/Footer";
 import Menu from "../shared/menu/Menu";
-var selColorVal = "#5B4FA8"
+var selColorVal = "#5B4FA8";
 export default {
   components: {
     "my-footer": Footer,
     "my-menu": Menu,
   },
-  data(){
-      return{
-          selColorVal
-      };
+  data() {
+    return {
+      selColorVal,
+    };
   },
   methods: {
     convertColors() {
@@ -124,7 +129,7 @@ export default {
         document.getElementById("css-key").value = convert.hex.keyword(current);
       } else if (current.includes("rgb") && !current.includes("rgba")) {
         current = current.replace(/[#rgb()]/g, "");
-        
+
         document.getElementById("hex").value =
           "#" + convert.rgb.hex(current.split(","));
         document.getElementById("rgba").value = "rgb(" + current + ")";
@@ -142,7 +147,7 @@ export default {
         );
       } else if (current.includes("cmyk")) {
         current = current.replace(/[#cmyk%()]/g, "");
-        
+
         document.getElementById("hex").value =
           "#" + convert.cmyk.hex(current.split(","));
         document.getElementById("rgba").value =
@@ -160,7 +165,7 @@ export default {
         );
       } else if (current.includes("hsl")) {
         current = current.replace(/[#hsl%()]/g, "");
-        
+
         document.getElementById("hex").value =
           "#" + convert.hsl.hex(current.split(","));
         document.getElementById("rgba").value =
@@ -178,7 +183,7 @@ export default {
         );
       } else if (current.includes("hwb")) {
         current = current.replace(/[#hwb%()]/g, "");
-        
+
         document.getElementById("hex").value =
           "#" + convert.hwb.hex(current.split(","));
         document.getElementById("rgba").value =
@@ -196,7 +201,7 @@ export default {
         );
       } else if (/^\d+$/.test(current)) {
         current = parseInt(current);
-        
+
         document.getElementById("hex").value =
           "#" + convert.ansi16.hex(current);
         document.getElementById("rgba").value =
@@ -212,6 +217,26 @@ export default {
           current
         );
       }
+    },
+    copyColor(eve) {
+      var parent = eve.target;
+
+      var copyText = parent.style.backgroundColor;
+      var $temp = $("<input>");
+      $("body").append($temp);
+      $temp.val(copyText).select();
+      document.execCommand("copy");
+      $temp.remove();
+      $("#warn").text("Copied!");
+      $("#warn").css("text-indent", "0px");
+      setTimeout(function () {
+        $("#warn").fadeOut();
+        setTimeout(function () {
+          $("#warn").text("");
+          $("#warn").fadeIn();
+          $("#warn").css("text-indent", "20px");
+        }, 300);
+      }, 600);
     },
   },
   computed: {
@@ -303,13 +328,14 @@ button {
   outline: none;
   border: none;
 }
-.bottom-wrapper{
-    display: flex;
+.bottom-wrapper {
+  display: flex;
 }
-.color-repr{
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    margin-left: 20px;
+.color-repr {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-left: 20px;
+  cursor: pointer;
 }
 </style>
