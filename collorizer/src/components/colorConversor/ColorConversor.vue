@@ -274,7 +274,7 @@ input:disabled {
 .wrapper {
   display: flex;
   max-width: 1000px;
-  margin: 65px auto;
+  margin: 73px auto;
   padding: 0px 40px;
   background: #2e2e2e;
   .input {
