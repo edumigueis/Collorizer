@@ -54,7 +54,7 @@
           </a>
         </div>
         <div class="block">
-          <a href="">
+          <a href="/#/lab/convert">
             <div class="inner-block">
               <img src="/src/assets/images/color-wheel.png" alt="" />
               <div class="bottom-block">
@@ -154,6 +154,9 @@
       text-align: center;
       img {
         height: 130px;
+        @media only screen and (max-width: 355px){
+          height: 110px;
+        }
       }
     }
     &:hover {
