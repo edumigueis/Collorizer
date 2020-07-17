@@ -337,5 +337,8 @@ button {
   border-radius: 50%;
   margin-left: 20px;
   cursor: pointer;
+  &:hover{
+      transform: scale(1.04);
+  }
 }
 </style>
