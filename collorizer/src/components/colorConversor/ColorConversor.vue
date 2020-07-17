@@ -17,12 +17,16 @@
               id="input-color"
               placeholder="HEX, HSL, ANSI..."
               autofocus
+              autocomplete="off"
             />
           </div>
-
-          <button class="convert-btn" v-on:click="convertColors">
-            Convert
-          </button>
+          <div class="bottom-wrapper">
+            <button class="convert-btn" v-on:click="convertColors">
+              Convert
+            </button>
+            <div class="color-repr" :style="selColor"></div>
+          </div>
+          <p id="warn"></p>
         </div>
       </div>
       <div class="output">
@@ -66,14 +70,44 @@
 import convert from "color-convert";
 import Footer from "../shared/footer/Footer";
 import Menu from "../shared/menu/Menu";
+var selColorVal = "#5B4FA8"
 export default {
   components: {
     "my-footer": Footer,
     "my-menu": Menu,
   },
+  data(){
+      return{
+          selColorVal
+      };
+  },
   methods: {
     convertColors() {
+      document.getElementById("warn").innerText = "";
       var current = document.getElementById("input-color").value;
+      this.selColorVal = current;
+      if (/^[A-Za-z]+$/.test(current)) {
+        try {
+          document.getElementById("hex").value =
+            "#" + convert.keyword.hex(current);
+          document.getElementById("rgba").value =
+            "rgb(" + convert.keyword.rgb(current) + ")";
+          document.getElementById("cmyk").value =
+            "cmyk(" + convert.keyword.cmyk(current) + ")";
+          document.getElementById("hsl").value =
+            "hsl(" + convert.keyword.hsl(current) + ")";
+          document.getElementById("hwb").value =
+            "hwb(" + convert.keyword.hwb(current) + ")";
+          document.getElementById("ansi").value = convert.keyword.ansi16(
+            current
+          );
+          document.getElementById("css-key").value = current;
+          return;
+        } catch (e) {
+          document.getElementById("warn").innerText =
+            "Make sure you are using the corect identifiers. E.g. rgb(255, 255, 255) or lightgreen or #fff.";
+        }
+      }
       if (current.includes("#")) {
         current = current.replace(/[#]/g, "");
 
@@ -90,7 +124,7 @@ export default {
         document.getElementById("css-key").value = convert.hex.keyword(current);
       } else if (current.includes("rgb") && !current.includes("rgba")) {
         current = current.replace(/[#rgb()]/g, "");
-        alert("ae");
+        
         document.getElementById("hex").value =
           "#" + convert.rgb.hex(current.split(","));
         document.getElementById("rgba").value = "rgb(" + current + ")";
@@ -107,8 +141,8 @@ export default {
           current.split(",")
         );
       } else if (current.includes("cmyk")) {
-        current = current.replace(/[#cmyk()]/g, "");
-        alert("ae");
+        current = current.replace(/[#cmyk%()]/g, "");
+        
         document.getElementById("hex").value =
           "#" + convert.cmyk.hex(current.split(","));
         document.getElementById("rgba").value =
@@ -124,16 +158,16 @@ export default {
         document.getElementById("css-key").value = convert.cmyk.keyword(
           current.split(",")
         );
-      }else if (current.includes("hsl")) {
-        current = current.replace(/[#hsl()]/g, "");
-        alert("ae");
+      } else if (current.includes("hsl")) {
+        current = current.replace(/[#hsl%()]/g, "");
+        
         document.getElementById("hex").value =
           "#" + convert.hsl.hex(current.split(","));
         document.getElementById("rgba").value =
           "rgb(" + convert.hsl.rgb(current.split(",")) + ")";
-        document.getElementById("cmyk").value = "cmyk(" + convert.hsl.cmyk(current.split(",")) + ")";
-        document.getElementById("hsl").value =
-          "hsl(" + current + ")";
+        document.getElementById("cmyk").value =
+          "cmyk(" + convert.hsl.cmyk(current.split(",")) + ")";
+        document.getElementById("hsl").value = "hsl(" + current + ")";
         document.getElementById("hwb").value =
           "hwb(" + convert.hsl.hwb(current.split(",")) + ")";
         document.getElementById("ansi").value = convert.hsl.ansi16(
@@ -142,26 +176,49 @@ export default {
         document.getElementById("css-key").value = convert.hsl.keyword(
           current.split(",")
         );
-      }
-      else if (current.includes("hwb")) {
-        current = current.replace(/[#hsl()]/g, "");
-        alert("ae");
+      } else if (current.includes("hwb")) {
+        current = current.replace(/[#hwb%()]/g, "");
+        
         document.getElementById("hex").value =
-          "#" + convert.hsl.hex(current.split(","));
+          "#" + convert.hwb.hex(current.split(","));
         document.getElementById("rgba").value =
-          "rgb(" + convert.hsl.rgb(current.split(",")) + ")";
-        document.getElementById("cmyk").value = "cmyk(" + convert.hsl.cmyk(current.split(",")) + ")";
+          "rgb(" + convert.hwb.rgb(current.split(",")) + ")";
+        document.getElementById("cmyk").value =
+          "cmyk(" + convert.hwb.cmyk(current.split(",")) + ")";
         document.getElementById("hsl").value =
-          "hsl(" + current + ")";
-        document.getElementById("hwb").value =
-          "hwb(" + convert.hsl.hwb(current.split(",")) + ")";
-        document.getElementById("ansi").value = convert.hsl.ansi16(
+          "hsl(" + convert.hwb.hsl(current.split(",")) + ")";
+        document.getElementById("hwb").value = "hwb(" + current + ")";
+        document.getElementById("ansi").value = convert.hwb.ansi16(
           current.split(",")
         );
-        document.getElementById("css-key").value = convert.hsl.keyword(
+        document.getElementById("css-key").value = convert.hwb.keyword(
           current.split(",")
+        );
+      } else if (/^\d+$/.test(current)) {
+        current = parseInt(current);
+        
+        document.getElementById("hex").value =
+          "#" + convert.ansi16.hex(current);
+        document.getElementById("rgba").value =
+          "rgb(" + convert.ansi16.rgb(current) + ")";
+        document.getElementById("cmyk").value =
+          "cmyk(" + convert.ansi16.cmyk(current) + ")";
+        document.getElementById("hsl").value =
+          "hsl(" + convert.ansi16.hsl(current) + ")";
+        document.getElementById("hwb").value =
+          "hwb(" + convert.ansi16.hwb(current) + ")";
+        document.getElementById("ansi").value = current;
+        document.getElementById("css-key").value = convert.ansi16.keyword(
+          current
         );
       }
+    },
+  },
+  computed: {
+    selColor() {
+      return {
+        "background-color": this.selColorVal,
+      };
     },
   },
 };
@@ -234,10 +291,25 @@ input:disabled {
 }
 #illustration {
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+}
+#warn {
+  margin-top: 20px;
+  text-indent: 20px;
+  color: rgb(230, 31, 97);
+  font-weight: 600;
 }
 button {
   outline: none;
   border: none;
+}
+.bottom-wrapper{
+    display: flex;
+}
+.color-repr{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    margin-left: 20px;
 }
 </style>
