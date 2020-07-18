@@ -67,14 +67,14 @@
           </a>
         </div>
         <div class="block">
-          <a href="">
+          <a href="/#/create/gradient">
             <div class="inner-block">
               <img
                 src="/src/assets/images/ilus-5.svg"
                 alt=""
               />
               <div class="bottom-block">
-                <h3 class="block-title">Web Design</h3>
+                <h3 class="block-title">Gradient Maker</h3>
                 <p class="block-desc">
                   The ultimate inspiration for stunning color combinations.
                 </p>
@@ -90,7 +90,7 @@
                 alt=""
               />
               <div class="bottom-block">
-                <h3 class="block-title">Social Media</h3>
+                <h3 class="block-title">Web Design</h3>
                 <p class="block-desc">
                   The ultimate inspiration for stunning color combinations.
                 </p>

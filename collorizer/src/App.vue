@@ -71,5 +71,29 @@ ul {
   list-style-type: none;
   padding: 0;
 }
-
+.vc-swatches{
+  width: 280px !important;
+    height: 300px !important;
+    overflow-y: scroll;
+    background-color: #1f1f1f !important;
+}
+.vc-sketch-field .vc-input__input {
+    color: #fcfcfc;
+    background: #1f1f1f !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+.vc-sketch-presets {
+    border-top: 1px solid #555 !important;
+}
+.vc-sketch-field .vc-input__label {
+    color: #fcfcfc !important;
+}
+.vc-sketch {
+    background: #1f1f1f !important;
+}
+.vc-sketch-color-wrap .vc-checkerboard {
+    border-radius: 3px;
+}
 </style>
