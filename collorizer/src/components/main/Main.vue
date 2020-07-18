@@ -70,7 +70,7 @@
           <a href="/#/create/gradient">
             <div class="inner-block">
               <img
-                src="/src/assets/images/ilus-5.svg"
+                src="/src/assets/images/gradient.png"
                 alt=""
               />
               <div class="bottom-block">
