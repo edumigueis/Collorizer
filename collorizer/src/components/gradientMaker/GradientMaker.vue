@@ -19,9 +19,30 @@
                 value="0"
                 v-on:input="changeRadius"
               />
-              <div class="item">
+              <div class="item" v-on:click="showEmbedModal">
                 <i class="fas fa-code"></i>
                 <span>Code</span>
+              </div>
+              <div class="item">
+                <label class="radio">
+                  <input
+                    type="radio"
+                    name="r"
+                    value="linear-gradient"
+                    v-model="type"
+                    checked
+                  />
+                  <span>Linear</span>
+                </label>
+                <label class="radio">
+                  <input
+                    type="radio"
+                    name="r"
+                    value="radial-gradient"
+                    v-model="type"
+                  />
+                  <span>Radial</span>
+                </label>
               </div>
             </div>
           </div>
@@ -64,7 +85,7 @@
                       value="0"
                     />
                   </div>
-                  <div class="x-wrap"><i class="fas fa-times"></i></div>
+                  <div class="x-wrap"><i v-on:click="deleteColor" class="fas fa-times"><span class="hidden">{{index}}</span></i></div>
                 </div>
                 <div class="bottom-actions">
                   <div class="plus-wrap" v-on:click="addColor()">
@@ -75,33 +96,110 @@
                   </div>
                 </div>
               </div>
-              <div class="rotation-controller">
-                <div class="arrow-indicator">
-                  <i :style="rotation" class="fas fa-arrow-down arrow-prop"></i>
+              <div class="left-control-wrapper">
+                <div
+                  class="rotation-controller"
+                  v-if="this.type === 'linear-gradient'"
+                >
+                  <div class="arrow-indicator">
+                    <i
+                      :style="rotation"
+                      class="fas fa-arrow-down arrow-prop"
+                    ></i>
+                    <input
+                      class="indicator"
+                      type="text"
+                      maxlength="4"
+                      v-model="angle"
+                    />
+                    <span>deg</span>
+                  </div>
                   <input
-                    class="indicator"
-                    type="text"
-                    maxlength="4"
+                    type="range"
+                    min="0"
+                    max="360"
+                    step="1"
+                    id="rangerDeg"
                     v-model="angle"
+                    v-on:input="changeAngle"
                   />
-                  <span>deg</span>
                 </div>
-                <input
-                  type="range"
-                  min="0"
-                  max="360"
-                  step="1"
-                  id="rangerDeg"
-                  v-model="angle"
-                  v-on:input="changeAngle"
-                />
+                <div class="radial-controller" v-else>
+                  <div class="item">
+                    <label class="radio">
+                      <input
+                        type="radio"
+                        name="r1"
+                        value=""
+                        v-model="typeRadial"
+                        checked
+                      />
+                      <span>Auto</span>
+                    </label>
+                    <label class="radio">
+                      <input
+                        type="radio"
+                        name="r2"
+                        value="circle"
+                        v-model="typeRadial"
+                      />
+                      <span
+                        >Circle
+                        <input
+                          type="text"
+                          maxlength="3"
+                          value="002"
+                          v-model="circleSize"
+                          id="number-of-pixels-circle"
+                        /><b>px</b></span
+                      >
+                    </label>
+                    <label class="radio">
+                      <input
+                        type="radio"
+                        name="r2"
+                        value="circle farthest-side"
+                        v-model="typeRadial"
+                      />
+                      <span>Circle Farthest</span>
+                    </label>
+                    <label class="radio">
+                      <input
+                        type="radio"
+                        name="r2"
+                        value="circle closest-side"
+                        v-model="typeRadial"
+                      />
+                      <span>Circle Closest</span>
+                    </label>
+                  </div>
+                  <div class="item second"></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
+    <div
+      class="embed-modal-wrapper"
+      id="embed-modal-wrapper"
+      v-on:click="hideEmbedModal"
+    >
+      <div class="embed-modal">
+        <header>
+          <h2>CSS</h2>
+          <i class="far fa-copy" v-on:click="copyToClipboard" title="Copy To Clipboard"></i>
+        </header>
+        <div class="code-wrapper">
+          <p>
+            .gradient {<br /><span class="code-prop" id="code-to-copy">{{ finalCode }}</span
+            ><br />}
+          </p>
+        </div>
+        <div class="res" :style="selGradient"></div>
+      </div>
+    </div>
     <my-footer></my-footer>
   </div>
 </template>
@@ -163,6 +261,10 @@ var borderRadius = 0;
 var type = "linear-gradient";
 var angle = "90";
 var index = 0;
+var finalCode = "";
+var typeRadial = "";
+var atRadius = "";
+var circleSize = 150;
 export default {
   components: {
     "my-footer": Footer,
@@ -177,6 +279,10 @@ export default {
       type,
       angle,
       index,
+      finalCode,
+      typeRadial,
+      atRadius,
+      circleSize,
     };
   },
   computed: {
@@ -189,9 +295,29 @@ export default {
 
       var corPrototype = prototype.substring(0, prototype.length - 1);
 
-      var res = this.type + "(" + this.angle + "deg ," + corPrototype + ")";
+      if (this.type === "radial-gradient") {
+        if (this.typeRadial != "") {
+          var res =
+            this.type + "(" + this.typeRadial + "," + corPrototype + ")";
+          if (this.typeRadial === "circle") {
+            var res =
+              this.type +
+              "(" +
+              this.typeRadial +
+              " " +
+              this.circleSize +
+              "px," +
+              corPrototype +
+              ")";
+          }
+        } else {
+          var res = this.type + "(" + corPrototype + ")";
+        }
+      } else {
+        var res = this.type + "(" + this.angle + "deg, " + corPrototype + ")";
+      }
 
-      console.log(res);
+      this.finalCode = res;
       return {
         background: res,
       };
@@ -229,6 +355,14 @@ export default {
         event.target.classList.add("selected");
       }
     },
+    showEmbedModal() {
+      document.getElementById("embed-modal-wrapper").style.display = "flex";
+    },
+    hideEmbedModal(eve) {
+      if (event.target.id == "embed-modal-wrapper") {
+        document.getElementById("embed-modal-wrapper").style.display = "none";
+      }
+    },
     addColor() {
       this.selColors.push({
         color: {
@@ -261,7 +395,24 @@ export default {
       for (var i = 0; i < this.selColors.length - 1; i++) {
         this.selColors[i].stop = (100 / (this.selColors.length - 1)) * i;
       }
-      this.selColors[this.selColors.length].stop = 100;
+      this.selColors[this.selColors.length - 1].stop = 100;
+    },
+    deleteColor(e){
+        var target = e.target;
+        
+        var index = $(target).find("span").text();
+        selColors.splice(index, index)
+    },
+    copyToClipboard(){
+
+      /* Get the text field */
+      var copyText = $("#code-to-copy").text();
+      alert(copyText);
+      var $temp = $("<input>");
+      $("body").append($temp);
+      $temp.val(copyText).select();
+      document.execCommand("copy");
+      $temp.remove();
     },
   },
 };
@@ -277,11 +428,17 @@ export default {
   margin: 73px auto;
   padding: 0px;
   background: #2e2e2e;
+  @media screen and (max-width: 1120px){
+        flex-wrap: wrap;
+    }
   .result {
     flex: 1 1 0px;
     display: flex;
     justify-content: center;
     align-items: center;
+    @media screen and (max-width: 1120px){
+        flex: 100%;
+    }
     .inner-result {
       padding: 30px 30px;
       display: flex;
@@ -294,6 +451,12 @@ export default {
     flex: 1 1 0px;
     .inner-input {
       padding: 30px 30px;
+      @media screen and (max-width: 1120px){
+        display: flex;
+    }
+    @media screen and (max-width: 925px){
+        flex-wrap: wrap;
+    }
     }
   }
 }
@@ -303,12 +466,19 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  @media screen and (max-width: 1120px){
+        width: 100%;
+    }
   .gradient {
     width: 37vw;
     height: 37vw;
     margin: 0 !important;
     max-width: 600px;
     max-height: 600px;
+    @media screen and (max-width: 1120px){
+        width: 100%;
+        max-width: 1000px;
+    }
   }
 }
 .tool-bar {
@@ -340,6 +510,13 @@ export default {
 }
 .picker-wrapper {
   display: flex;
+  @media screen and (max-width: 925px){
+        flex: 100%;
+        justify-content: center;
+    }
+    @media screen and (max-width: 630px){
+        flex-wrap: wrap-reverse;
+    }
 }
 .gradient-config {
   display: flex;
@@ -417,9 +594,43 @@ export default {
 }
 .gradient-setup-wrapper {
   display: flex;
+  @media screen and (max-width: 1120px){
+        margin-left: 10px;
+    }
+    @media screen and (min-width: 758px) and (max-width: 925px){
+        width: 70%;
+        margin-left: 13vw !important;
+    }
+    @media screen and (max-width: 758px){
+        width: 70%;
+        margin-left: 6vw !important;
+    }
+    @media screen and (max-width: 758px){
+        width: 80%;
+        margin-left: 6vw !important;
+    }
+    @media screen and (max-width: 1085px){
+        margin-left: 20px;
+        flex-wrap: wrap;
+    }
+    .gradient-setup{
+        @media screen and (min-width: 926px) and (max-width: 1085px){
+        flex: 100%;
+    }
+    @media screen and (min-width: 620px) and (max-width: 650px){
+        width: 70%;
+    }
+    @media screen and (max-width: 620px){
+        width: 100%;
+    }
+        
+    }
 }
-.rotation-controller {
+.left-control-wrapper {
   flex: 1 1 0px;
+  @media screen and (max-width: 650px){
+        flex: 100%;
+    }
 }
 .arrow-indicator {
   display: flex;
@@ -427,6 +638,7 @@ export default {
   justify-content: center;
   align-items: center;
   margin-top: 70px;
+  
   .arrow-prop {
     font-size: 50px;
   }
@@ -448,5 +660,171 @@ export default {
   width: 75%;
   margin-left: 10%;
   margin-top: 52px;
+}
+.embed-modal {
+  width: 40vw;
+  margin: 20px auto;
+  max-width: 1000px;
+  header {
+    width: 100%;
+    height: 40px;
+    background-color: #2e2e2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h2 {
+      margin-left: 20px;
+      font-size: 27px;
+      letter-spacing: 0.07rem;
+      width: 100%;
+    }
+    i {
+      font-size: 25px;
+      margin-right: 20px;
+      cursor: pointer;
+    }
+  }
+  .code-wrapper {
+    width: 100%;
+    background-color: #1f1f1f;
+    height: fit-content;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 400px;
+    padding: 15px 20px;
+    p {
+      font-size: 16px;
+      width: 100%;
+      .code-prop {
+        margin-left: 20px;
+        width: calc(100% - 20px);
+      }
+    }
+  }
+  .res {
+    width: 100%;
+    height: 200px;
+  }
+}
+.embed-modal-wrapper {
+  width: 100vw;
+  position: fixed;
+  background: #000000aa;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  display: none;
+}
+$radioSize: 22px;
+$radioBorder: #d1d7e3;
+$radioActive: #5d9bfb;
+
+.radio {
+  margin: 16px 0;
+  display: block;
+  cursor: pointer;
+  &:nth-child(2) {
+    margin-left: 20px;
+  }
+  input[type="radio"] {
+    display: none;
+    & + span {
+      line-height: $radioSize;
+      height: $radioSize;
+      padding-left: $radioSize;
+      display: block;
+      position: relative;
+      &:not(:empty) {
+        padding-left: $radioSize + 8;
+      }
+      &:before,
+      &:after {
+        content: "";
+        width: $radioSize;
+        height: $radioSize;
+        display: block;
+        border-radius: 50%;
+        left: 0;
+        top: 0;
+        position: absolute;
+      }
+      &:before {
+        background: $radioBorder;
+        transition: background 0.2s ease,
+          transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 2);
+      }
+      &:after {
+        background: #fff;
+        transform: scale(0.78);
+        transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.4);
+      }
+    }
+    &:checked + span {
+      &:before {
+        transform: scale(1.04);
+        background: $radioActive;
+      }
+      &:after {
+        transform: scale(0.4);
+        transition: transform 0.3s ease;
+      }
+    }
+  }
+  &:hover {
+    input {
+      & + span {
+        &:before {
+          transform: scale(0.92);
+        }
+        &:after {
+          transform: scale(0.74);
+        }
+      }
+      &:checked + span {
+        &:after {
+          transform: scale(0.4);
+        }
+      }
+    }
+  }
+}
+.radial-controller {
+  margin-top: 16px;
+  .item {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 30px;
+
+    label {
+      width: 100%;
+      margin: 7px 0px;
+    }
+  }
+}
+
+.item.second {
+  margin-top: 20px;
+}
+#number-of-pixels-circle {
+  outline: none;
+  border: none;
+  background: transparent;
+  width: 30px;
+  font-size: 16px;
+  color: #fefefe;
+  margin-left: 10px;
+  &::after {
+    content: "px";
+  }
+}
+i{
+    .hidden{
+        display: none;
+    }
 }
 </style>

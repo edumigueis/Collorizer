@@ -56,7 +56,7 @@
         <div class="block">
           <a href="/#/lab/convert">
             <div class="inner-block">
-              <img src="/src/assets/images/color-wheel.png" alt="" />
+              <img src="/src/assets/images/convert-icon.svg" alt="" />
               <div class="bottom-block">
                 <h3 class="block-title">Color Conversor</h3>
                 <p class="block-desc">
@@ -102,7 +102,7 @@
           <a href="">
             <div class="inner-block">
               <img
-                src="/src/assets/images/ilus-5.svg"
+                src="/src/assets/images/gallery.png"
                 alt=""
               />
               <div class="bottom-block">
@@ -118,7 +118,7 @@
           <a href="">
             <div class="inner-block">
               <img
-                src="/src/assets/images/ilus-5.svg"
+                src="/src/assets/images/folder.png"
                 alt=""
               />
               <div class="bottom-block">

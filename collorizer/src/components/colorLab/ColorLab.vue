@@ -35,12 +35,27 @@
             <div class="flex-part">
               <div class="color-combine">
                 <div class="combination">
-                    <div class="prop" :style="selColor"></div>
-                    <div class="prop" :style="selColorLight"></div>
-                    <div class="prop" :style="opColor"></div>
-                    <div class="prop" :style="opColorLight"></div>
-                    <div class="prop" :style="neutralOp"></div>
-                  </div>
+                  <div class="prop" :style="selColor"></div>
+                  <div class="prop" :style="selColorLight"></div>
+                  <div class="prop" :style="opColor"></div>
+                  <div class="prop" :style="opColorLight"></div>
+                  <div class="prop" :style="neutralOp"></div>
+                </div>
+                <div class="combination">
+                  <div class="prop" :style="selColor"></div>
+                  <div class="prop" :style="selColorLight"></div>
+                  <div class="prop" :style="triColor1"></div>
+                  <div class="prop" :style="triColor1Light"></div>
+                  <div class="prop" :style="triColor2"></div>
+
+                  <div class="prop" :style="neutralOp"></div>
+                </div>
+                <div class="combination pastel">
+                  <div class="prop" :style="selColor"></div>
+                    <div class="prop" :style="quadColor1"></div>
+                    <div class="prop" :style="quadColor2"></div>
+                    <div class="prop" :style="quadColor3"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -92,9 +107,26 @@
               </div>
             </div>
           </div>
+          <div class="flex-wrap mega-wrap">
+            <div class="flex-full">
+              <div class="combination full">
+                <div class="prop" :style="fullSpec(-5)"></div>
+                <div class="prop" :style="fullSpec(-4)"></div>
+                <div class="prop" :style="fullSpec(-3)"></div>
+                <div class="prop" :style="fullSpec(-2)"></div>
+                <div class="prop" :style="fullSpec(-1)"></div>
+                <div class="prop" :style="selColor"></div>
+                <div class="prop" :style="fullSpec(1)"></div>
+                <div class="prop" :style="fullSpec(2)"></div>
+                <div class="prop" :style="fullSpec(3)"></div>
+                <div class="prop" :style="fullSpec(4)"></div>
+                <div class="prop" :style="fullSpec(5)"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-              <my-footer></my-footer>
+      <my-footer></my-footer>
     </section>
     <!--<section class="color-wheel">
       <div class="picker-wrap">
@@ -242,22 +274,19 @@
   transition: background-color 0.2s ease-in-out !important;
   width: 400px;
   z-index: 5;
-
-
-
 }
 @keyframes morph {
   0% {
-			border-radius:  60% 40% 30% 70% / 60% 30% 70% 40%;
-	} 
-	
-	50% {
-			border-radius:  30% 60% 70% 40% / 50% 60% 30% 60%;
-	}
-  
-	100% {
-		border-radius:  60% 40% 30% 70% / 60% 30% 70% 40%;
-	} 
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
 }
 .combination {
   display: flex;
@@ -275,7 +304,7 @@
   flex-wrap: wrap;
   .flex-half-full {
     width: 48%;
-    &:nth-child(1){
+    &:nth-child(1) {
       margin-right: 4%;
     }
     display: flex;
@@ -284,11 +313,21 @@
     }
   }
 }
-.main-title{
+.flex-full {
+  width: 48%;
+  display: flex;
+}
+.full {
+  width: 100% !important;
+}
+.main-title {
   font-size: 2.3rem;
-      letter-spacing: 0.05rem;
-      text-align: center;
-      margin-bottom: 50px;
+  letter-spacing: 0.05rem;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.pastel{
+  filter: brightness(190%) saturate(71%);
 }
 </style>
 
@@ -686,7 +725,7 @@ export default {
         "background-color": op,
       };
     },
-        ana1M() {
+    ana1M() {
       var manip = this.color.hsl.h;
       manip = manip - 55;
       var op =
@@ -746,14 +785,14 @@ export default {
         "background-color": op,
       };
     },
-    selColorLight(){
+    selColorLight() {
       var manip = this.color.hsl.l * 100;
       manip = manip + 20;
       var op =
         "hsl(" +
         this.color.hsl.h +
         "," +
-        ((this.color.hsl.s * 100) + 10)  +
+        (this.color.hsl.s * 100 + 10) +
         "%," +
         manip +
         "%)";
@@ -761,7 +800,22 @@ export default {
         "background-color": op,
       };
     },
-    opColorLight(){
+    triColor1Light() {
+      var manip = this.color.hsl.l * 100;
+      manip = manip + 20;
+      var op =
+        "hsl(" +
+        (this.color.hsl.h + 120) +
+        "," +
+        (this.color.hsl.s * 100 + 10) +
+        "%," +
+        manip +
+        "%)";
+      return {
+        "background-color": op,
+      };
+    },
+    opColorLight() {
       var hueInvert = this.color.hsl.h + 180;
       var manip = this.color.hsl.l * 100;
       manip = manip + 25;
@@ -769,7 +823,7 @@ export default {
         "hsl(" +
         hueInvert +
         "," +
-        ((this.color.hsl.s * 100) + 10)  +
+        (this.color.hsl.s * 100 + 10) +
         "%," +
         manip +
         "%)";
@@ -777,19 +831,18 @@ export default {
         "background-color": op,
       };
     },
-    neutralOp(){
+    neutralOp() {
       var hueInvert = this.color.hsl.h + 90;
       var manip = this.color.hsl.l * 100;
-      if(manip < 50)
-      manip = 120 - manip;
-      else{
-        manip = 1.9 * manip
+      if (manip < 50) manip = 120 - manip;
+      else {
+        manip = 1.9 * manip;
       }
       var op =
         "hsl(" +
         hueInvert +
         "," +
-        ((this.color.hsl.s * 100) + 10)  +
+        (this.color.hsl.s * 100 + 10) +
         "%," +
         manip +
         "%)";
@@ -825,6 +878,21 @@ export default {
 
       let pixel = ctx.getImageData(xpag, ypag, 1, 1).data;
       console.log(pixel);
+    },
+    fullSpec: function (ranger) {
+      var manip = this.color.hsl;
+      manip = Math.round(manip.l * 100) + 5 * ranger;
+      var op =
+        "hsl(" +
+        this.color.hsl.h +
+        "," +
+        this.color.hsl.s * 100 +
+        "%," +
+        manip +
+        "%)";
+      return {
+        "background-color": op,
+      };
     },
   },
 };
