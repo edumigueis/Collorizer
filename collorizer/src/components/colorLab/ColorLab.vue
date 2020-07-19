@@ -106,8 +106,24 @@
                 <div class="prop" :style="ana4S"></div>
               </div>
             </div>
+
           </div>
           <div class="flex-wrap mega-wrap">
+            <div class="flex-full">
+              <div class="combination full">
+                <div class="prop" :style="fullSpec(-5)"></div>
+                <div class="prop" :style="fullSpec(-4)"></div>
+                <div class="prop" :style="fullSpec(-3)"></div>
+                <div class="prop" :style="fullSpec(-2)"></div>
+                <div class="prop" :style="fullSpec(-1)"></div>
+                <div class="prop" :style="selColor"></div>
+                <div class="prop" :style="fullSpec(1)"></div>
+                <div class="prop" :style="fullSpec(2)"></div>
+                <div class="prop" :style="fullSpec(3)"></div>
+                <div class="prop" :style="fullSpec(4)"></div>
+                <div class="prop" :style="fullSpec(5)"></div>
+              </div>
+            </div>
             <div class="flex-full">
               <div class="combination full">
                 <div class="prop" :style="fullSpec(-5)"></div>
@@ -316,6 +332,9 @@
 .flex-full {
   width: 48%;
   display: flex;
+  &:nth-child(1) {
+      margin-right: 4%;
+    }
 }
 .full {
   width: 100% !important;
