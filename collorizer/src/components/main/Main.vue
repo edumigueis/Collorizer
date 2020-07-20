@@ -82,7 +82,7 @@
             </div>
           </a>
         </div>
-        <div class="block">
+        <!--<div class="block">
           <a href="">
             <div class="inner-block">
               <img
@@ -113,7 +113,7 @@
               </div>
             </div>
           </a>
-        </div>
+        </div>-->
         <div class="block">
           <a href="">
             <div class="inner-block">
