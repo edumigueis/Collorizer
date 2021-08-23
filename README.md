@@ -274,7 +274,7 @@ Project Link: [https://github.com/edumigueis/Collorizer](https://github.com/edum
 
 *  [Node Vibrant](https://github.com/Vibrant-Colors/node-vibrant)
 
-*  [Unsplashed](http://leafo.net/sticky-kit)
+*  [Unsplash](http://leafo.net/sticky-kithttps://unsplash.com/)
 
 *  [Font Awesome](https://fontawesome.com)
 
