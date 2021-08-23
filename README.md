@@ -17,7 +17,7 @@
 
 <a  href="https://github.com/edumigueis/Collorizer">
 
-<img  src="collorizer/assets/logo.png"  alt="Logo"  width="80"  height="80">
+<img  src="collorizer/src/assets/header1.png"  alt="Logo"  width="80"  height="80">
 
 </a>
 
