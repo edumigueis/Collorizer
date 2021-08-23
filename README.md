@@ -275,7 +275,16 @@ Project Link: [https://github.com/edumigueis/Collorizer](https://github.com/edum
 *  [Font Awesome](https://fontawesome.com)
 
   
+  <!-- META -->
+
+## Meta
+
   
+
+Developed by Eduardo Migueis - [edumigueis](https://www.linkedin.com/in/edumigueis/)
+
+  
+Licensed under the MIT license. Images not included.
   
   
   
