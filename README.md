@@ -281,10 +281,10 @@ Project Link: [https://github.com/edumigueis/Collorizer](https://github.com/edum
 
   
 
-Developed by Eduardo Migueis - [edumigueis](https://www.linkedin.com/in/edumigueis/)
+Developed and designed by Eduardo Migueis - [edumigueis](https://www.linkedin.com/in/edumigueis/)
 
   
-Licensed under the MIT license. Images not included.
+Licensed under the MIT license. Images not included.Feel free to use the design as inspiration.
   
   
   
