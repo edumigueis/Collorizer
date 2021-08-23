@@ -17,7 +17,7 @@
 
 <a  href="https://github.com/edumigueis/Collorizer">
 
-<img  src="collorizer/src/header1.png"  alt="Logo"  width="80"  height="80">
+[![Product Name Screen Shot][product-screenshot-b]](https://github.com/edumigueis/Collorizer)
 
 </a>
 
@@ -37,11 +37,11 @@ An awesome color manipulating project in VueJS. The project provides a palette m
 
 ·
 
-<a  https://github.com/edumigueis/Collorizer/issues">Report Bug</a>
+<a  href="https://github.com/edumigueis/Collorizer/issues">Report Bug</a>
 
 ·
 
-<a  https://github.com/edumigueis/Collorizer/issues">Request Feature</a>
+<a  href="https://github.com/edumigueis/Collorizer/issues">Request Feature</a>
 
 </p>
   
@@ -108,7 +108,7 @@ An awesome color manipulating project in VueJS. The project provides a palette m
 
   
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://github.com/edumigueis/Collorizer)
 
   
 
@@ -297,3 +297,5 @@ Project Link: [https://github.com/edumigueis/Collorizer](https://github.com/edum
 [linkedin-url]: https://www.linkedin.com/in/edumigueis/
 
 [product-screenshot]: collorizer/src/header2.png
+
+[product-screenshot-b]: collorizer/src/header1.png
