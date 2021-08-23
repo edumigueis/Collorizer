@@ -17,7 +17,7 @@
 
 <a  href="https://github.com/edumigueis/Collorizer">
 
-<img  src="collorizer/src/assets/header1.png"  alt="Logo"  width="80"  height="80">
+<img  src="collorizer/src/header1.png"  alt="Logo"  width="80"  height="80">
 
 </a>
 
@@ -296,4 +296,4 @@ Project Link: [https://github.com/edumigueis/Collorizer](https://github.com/edum
 
 [linkedin-url]: https://www.linkedin.com/in/edumigueis/
 
-[product-screenshot]: collorizer/src/assets/header1.png
+[product-screenshot]: collorizer/src/header2.png
