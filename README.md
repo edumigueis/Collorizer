@@ -1,9 +1,9 @@
 
 # Collorizer
 
-[![MIT License][license-shield]][license-url]
+<p>[![MIT License][license-shield]][license-url]
 
-[![LinkedIn][linkedin-shield]][linkedin-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]</p>
 
   
   
@@ -35,10 +35,8 @@ An awesome color manipulating project in VueJS. The project provides a palette m
 
 <a  href="https://github.com/edumigueis/Collorizer/issues">Report Bug</a>
 
-·
-
 <a  href="https://github.com/edumigueis/Collorizer/issues">Request Feature</a>
-
+<br />
 </p>
   
   
