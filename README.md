@@ -33,10 +33,6 @@ An awesome color manipulating project in VueJS. The project provides a palette m
 
 <br />
 
-<a  href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
-
-·
-
 <a  href="https://github.com/edumigueis/Collorizer/issues">Report Bug</a>
 
 ·
