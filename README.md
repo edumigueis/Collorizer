@@ -44,9 +44,6 @@ An awesome color manipulating project in VueJS. The project provides a palette m
 <a  https://github.com/edumigueis/Collorizer/issues">Request Feature</a>
 
 </p>
-
-</p>
-
   
   
   
@@ -131,7 +128,7 @@ Some of the features already implemented:
 * A color conversor that supports: HEX, RGB, CMYK, HSL, HWB, ANSI16 and CSS keys.
 
 
-A list of commonly used resources that I find helpful are listed in the acknowledgements.
+Note: for the moment, these are the implemented features and more can be implemented. If you want, feel free to contribute. The data base integration in the "my-palettes" page as well as the blog and explore pages were discontinued but the routes were kept so that they could be added eventually.
 
   
 
@@ -297,4 +294,4 @@ Project Link: [https://github.com/edumigueis/Collorizer](https://github.com/edum
 
 [linkedin-url]: https://www.linkedin.com/in/edumigueis/
 
-[product-screenshot]: header.png
+[product-screenshot]: collorizer/src/assets/header1.png
