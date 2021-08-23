@@ -1,9 +1,7 @@
 
 # Collorizer
 
-<p>[![MIT License][license-shield]][license-url]
-
-[![LinkedIn][linkedin-shield]][linkedin-url]</p>
+[![MIT License][license-shield]][license-url] [![LinkedIn][linkedin-shield]][linkedin-url]
 
   
   
